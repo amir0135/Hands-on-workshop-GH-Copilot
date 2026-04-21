@@ -11,6 +11,7 @@ Choose your track below and start building amazing things with AI-powered develo
 ## 📋 Table of Contents
 
 - [🔌 MCP (GitHub, Microsoft Learn, Playwright)](#-mcp-github-microsoft-learn-playwright)
+- [☁️ Spec2Cloud](#️-spec2cloud)
 - [⚙️ Automate Your Work (GitHub Copilot Spec Kit Lab)](#️-automate-your-work-github-copilot-spec-kit-lab)
 - [💻 Fast Prototyping – Dev/App](#-fast-prototyping--devapp)
 - [🏗️ Fast Prototyping – Ops/Infra](#️-fast-prototyping--opsinfra)
@@ -23,6 +24,14 @@ Choose your track below and start building amazing things with AI-powered develo
 This track focuses on building and experimenting with **Model Context Protocol (MCP)** servers to extend GitHub Copilot with richer contextual awareness. Participants will learn how to set up MCP integrations using sources like GitHub, Microsoft Docs, and Playwright, explore practical examples, and discover "awesome Copilot" patterns that show how external tools and data can be securely exposed to Copilot to improve code generation, testing, and developer workflows.
 
 > 💻 [Start Lab](tracks/mcp.md)
+
+---
+
+## ☁️ AI-Powered Delivery with Spec2Cloud 
+
+This lab introduces **Spec2Cloud**, an AI-powered, specification-driven workflow for turning product ideas into production-ready applications on Azure. Participants will explore how specialized GitHub Copilot agents and structured prompts can guide planning, implementation, and deployment, making it easier to move from requirements to working cloud solutions with stronger consistency and traceability.
+
+> 💻 [Start Lab](https://github.com/EmeaAppGbb/spec2cloud/tree/main)
 
 ---
 
