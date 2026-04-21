@@ -110,12 +110,12 @@ Try these prompts directly in Copilot Chat after enabling the corresponding tool
 
 3. GitHub: Recent commits
 
-- Prompt: “@github List the last 10 commits in kostinams/github-copilot-use-cases.”
+- Prompt: “List the last 10 commits in kostinams/github-copilot-use-cases.”
   - Replace with your repo if needed, e.g., `owner/repo`.
 
 4. Browser (Playwright): Navigate and extract info
 
-- Prompt: “@playwright Navigate to Yahoo Finance and find MSFT stock price.”
+- Prompt: “Navigate to Yahoo Finance and find MSFT stock price.”
 
 5. Azure Docs Q&A
 
