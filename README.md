@@ -11,8 +11,8 @@ Choose your track below and start building amazing things with AI-powered develo
 ## 📋 Table of Contents
 
 - [🔌 MCP (GitHub, Microsoft Learn, Playwright)](#-mcp-github-microsoft-learn-playwright)
-- [☁️ Spec2Cloud](#️-spec2cloud)
-- [⚙️ Automate Your Work (GitHub Copilot Spec Kit Lab)](#️-automate-your-work-github-copilot-spec-kit-lab)
+- [☁️ AI-Powered Delivery – Spec2Cloud](#️-ai-powered-delivery--spec2cloud)
+- [⚙️ Automate Your Spec Kit](#️-automate-your-spec-kit)
 - [💻 Fast Prototyping – Dev/App](#-fast-prototyping--devapp)
 - [🏗️ Fast Prototyping – Ops/Infra](#️-fast-prototyping--opsinfra)
 - [📜 Scripting Track](#-scripting-track)
@@ -27,7 +27,7 @@ This track focuses on building and experimenting with **Model Context Protocol (
 
 ---
 
-## ☁️ AI-Powered Delivery with Spec2Cloud 
+## ☁️ AI-Powered Delivery – Spec2Cloud
 
 This lab introduces **Spec2Cloud**, an AI-powered, specification-driven workflow for turning product ideas into production-ready applications on Azure. Participants will explore how specialized GitHub Copilot agents and structured prompts can guide planning, implementation, and deployment, making it easier to move from requirements to working cloud solutions with stronger consistency and traceability.
 
@@ -35,7 +35,7 @@ This lab introduces **Spec2Cloud**, an AI-powered, specification-driven workflow
 
 ---
 
-## ⚙️ Automate Your Work (GitHub Copilot Spec Kit Lab)
+## ⚙️ Automate Your Spec Kit
 
 In this track, teams will use **GitHub Copilot Spec Kit** to turn product ideas into working features through structured specifications. Starting from a clear problem statement, participants will define requirements, generate design artifacts, and implement a product feature with Copilot's help, showcasing how spec‑driven development can accelerate delivery, improve clarity, and align engineering output with business intent.
 
