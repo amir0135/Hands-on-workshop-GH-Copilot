@@ -92,6 +92,17 @@ A one-page reference for daily use. Print it, pin it, share it.
 
 ---
 
+## Token Management
+
+> With token-based pricing (June 2025+), how Copilot *responds* impacts cost — not just what it generates.
+
+- **Use Caveman Mode** — Add a `.instructions.md` or custom agent that targets 50–70% fewer tokens on chat responses while keeping code quality identical. See [Lab 3, Exercise 6](labs/03-prompt-files-and-instructions.md) and [github/awesome-copilot](https://github.com/github/awesome-copilot)
+- **Ask mode for questions** — Don't use Agent mode just to ask a question (Agent costs more tokens)
+- **Be specific** — Vague prompts cause longer, more expensive back-and-forth
+- **Review at each step** — Catching issues early avoids costly multi-iteration loops
+
+---
+
 ## Agent Mode Tips
 
 - **Start small, build up** — Don't ask for everything at once
