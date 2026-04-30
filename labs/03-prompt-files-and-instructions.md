@@ -418,6 +418,154 @@ You are a blunt, token-conscious developer. Your job: answer fast, use minimal w
 
 ---
 
+## Exercise 7: Skills (`SKILL.md`) — Packaging Domain Knowledge
+
+A `SKILL.md` is a self-contained, agent-discoverable instruction file. Think of it as a `.instructions.md` for a *specific recurring workflow* — packaged so the agent (and humans) can find and apply it on demand.
+
+This is the same pattern Claude uses for skills, and it works just as well with Copilot agent mode.
+
+### Create your first skill
+
+Create `playground/.github/skills/postgres-migration-helper/SKILL.md`:
+
+```markdown
+---
+name: postgres-migration-helper
+description: Use when generating, reviewing, or running PostgreSQL schema migrations in this repo. Enforces our naming, transactional safety, and rollback rules.
+---
+
+# PostgreSQL Migration Skill
+
+## When to use
+- User asks to add/modify a database column, table, or index
+- User mentions "migration", "schema change", or "alembic/flyway/sqitch"
+
+## Rules this skill enforces
+1. Every migration must have an explicit rollback (`down`) section.
+2. Wrap DDL in a single transaction unless the statement is non-transactional (e.g. `CREATE INDEX CONCURRENTLY`).
+3. Never `DROP COLUMN` without a deprecation step in a prior migration.
+4. Filenames: `YYYYMMDDHHMM_<short_description>.sql`.
+
+## Workflow
+1. Read existing migrations under `db/migrations/` to match style.
+2. Generate the migration file.
+3. Generate or update the rollback.
+4. Run `make migrate-dry-run` and show output.
+```
+
+### Use it
+
+Reference it from your repo's `copilot-instructions.md`:
+
+```markdown
+## Skills
+When the user works on database migrations, follow `.github/skills/postgres-migration-helper/SKILL.md`.
+```
+
+Or invoke it explicitly in chat:
+
+```
+Use the postgres-migration-helper skill to add a status column to orders.
+```
+
+### Why a SKILL.md instead of one giant `copilot-instructions.md`?
+
+- **Smaller context** — only loaded when relevant → fewer tokens
+- **Discoverable** — the `description` field tells the agent when to apply it
+- **Composable** — one skill per domain (migrations, deployments, on-call response, etc.)
+
+> **Real examples** ship in this workspace already — the `microsoft-foundry`, `azure-prepare`, and `agent-customization` skills are all `SKILL.md` files following this pattern.
+
+---
+
+## Exercise 8: `lessons.md` — Stop Re-Discovering the Same Bugs
+
+Every time you debug something painful, record one line so the agent doesn't repeat the mistake. This is the single highest-ROI token-saving habit.
+
+### Create the file
+
+Create `playground/.github/lessons.md`:
+
+```markdown
+# Lessons Learned
+
+> Append-only. One line per lesson. Agents read this before suggesting fixes.
+
+- 2026-03-12: `requests` SSL errors on macOS → set `REQUESTS_CA_BUNDLE`, do NOT downgrade urllib3.
+- 2026-03-18: Our `User.id` is a UUID, not an int — never generate `id: int` for our models.
+- 2026-04-02: Pytest `tmp_path` doesn't work with our Docker test runner — use `tmp_path_factory` at session scope.
+- 2026-04-15: `FROM node:18` is forbidden — corp registry only allows `node:20-bookworm-slim`.
+```
+
+### Wire it into instructions
+
+Add to `copilot-instructions.md`:
+
+```markdown
+## Lessons Learned
+Always check `.github/lessons.md` before suggesting fixes for build, test, or environment issues. Add a new line whenever a non-obvious issue is solved.
+```
+
+### Why this works
+
+Without `lessons.md`: the agent re-discovers the same SSL/UUID/Docker problem, burns tokens iterating, lands on the same answer next week.
+
+With `lessons.md`: the agent reads ~1KB of hard-won knowledge and skips straight to the right fix.
+
+### Try it
+
+1. Add a fake but plausible "lesson" to the file (e.g. *"Our `Order.total` is a `Decimal`, never `float` — float arithmetic causes 1-cent rounding errors in checkout"*)
+2. Ask the agent to generate a new order model
+3. Verify it uses `Decimal` without you mentioning it
+
+---
+
+## Exercise 9: Persistent Memory (Built-in)
+
+Copilot in VS Code has memory scopes you can use directly — no file plumbing required.
+
+| Scope | Persists across | Best for |
+|-------|----------------|----------|
+| `/memories/` | All workspaces, all sessions | Personal preferences, general insights |
+| `/memories/repo/` | This repo only | Build commands, repo-specific conventions |
+| `/memories/session/` | Current conversation | In-progress notes, scratch state |
+
+### Try it
+
+In Copilot Chat, ask the agent to save a fact:
+
+```
+Remember for this repo: tests are run with `make test-unit`, not `pytest` directly.
+```
+
+Then in a future session ask: *"How do I run the unit tests?"* — it should recall the fact.
+
+### When to use which
+
+- **`SKILL.md`** — workflows you can describe up front (migrations, deployments, reviews)
+- **`lessons.md`** — surprises and gotchas, recorded after the fact
+- **Persistent memory** — facts the agent learns through conversation
+
+The three patterns are complementary. Most teams need all three.
+
+---
+
+## Exercise 10: Token Reduction Checklist
+
+Pulling Exercises 6–9 together — a checklist to reduce tokens without sacrificing quality:
+
+| Technique | Savings | Where |
+|-----------|---------|-------|
+| Caveman Mode (Exercise 6) | 50–70% on chat responses | `.instructions.md` |
+| `lessons.md` (Exercise 8) | Avoids repeated debug loops | `.github/lessons.md` |
+| `SKILL.md` (Exercise 7) | Smaller, scoped context vs. one giant instruction file | `.github/skills/` |
+| Use `Ask` mode for questions | Agent mode tools cost extra | Mode dropdown |
+| Specific prompts | Fewer iterations needed | Your prompts |
+| Right-sized model | Don't use a reasoning model for trivia (see [Lab 2 Ex. 7](02-agent-mode-mastery.md#exercise-7-pick-the-right-model)) | Model selector |
+| Scoped `applyTo` patterns | Instructions only load when relevant | `.instructions.md` frontmatter |
+
+---
+
 ## Discussion Points
 
 1. **What are the top 3 prompt files** your team should create first?
@@ -436,6 +584,9 @@ You are a blunt, token-conscious developer. Your job: answer fast, use minimal w
 - Use `applyTo` patterns to embed domain knowledge into specific parts of the codebase
 - Test your prompts against intentionally imperfect code to verify they catch what matters
 - Treat prompt files like code: review them, iterate on them, refine them based on results
+- **Skills (`SKILL.md`)** package recurring workflows so they're discoverable and only loaded when relevant
+- **`lessons.md`** turns painful debugging sessions into one-line wins for every future agent run
+- **Persistent memory** (user / repo / session scopes) captures facts the agent learns through conversation
 
 ---
 

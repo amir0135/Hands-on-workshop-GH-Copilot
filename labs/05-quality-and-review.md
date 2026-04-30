@@ -353,6 +353,71 @@ Run `/before-commit` against your playground code. Fix any issues it finds. Run 
 
 ---
 
+## Exercise 7: Test Automation Track (QA / Automation Engineers)
+
+Not every workshop participant is a developer. If your day job is test automation, here's how to use Copilot for *test* work — not feature code.
+
+### Generate a test plan from requirements
+
+```
+Read #file:playground/specs/notification-service.md and produce a test plan:
+- Equivalence classes for inputs
+- Boundary cases
+- Negative tests
+- Security/abuse cases
+- Accessibility checks (where relevant)
+
+Output as a Markdown table: ID | Type | Preconditions | Steps | Expected.
+```
+
+### Generate UI automation (Playwright example)
+
+```
+Generate Playwright tests in TypeScript for the login flow.
+Cover: valid login, invalid password, locked account, password reset link.
+Use page object model. Selectors must use data-testid attributes only.
+Tests must be independent — no shared state.
+```
+
+The same pattern works for Selenium, Cypress, and Appium — substitute the framework name.
+
+### Fix flaky tests (Copilot is great at this)
+
+```
+Here's a flaky test [paste]. The error is [paste].
+Diagnose the root cause (timing? selector? state leak?) and propose a fix that
+removes the flakiness without weakening the assertion.
+```
+
+### Test-data generation
+
+```
+Generate 50 realistic but fake user records as JSON.
+Include edge cases: emojis in names, very long emails, RTL languages, single-character names, names with apostrophes.
+```
+
+### API contract testing
+
+```
+From the OpenAPI spec at #file:contracts/orders-api.yaml, generate contract tests
+that verify every endpoint's response shape against the schema. Use [your framework].
+Include negative tests: required field missing, wrong type, extra field.
+```
+
+### Anti-patterns to avoid (specific to test code)
+
+- ❌ Asking Copilot to add `try/except: pass` to silence flaky tests — that's hiding bugs
+- ❌ Generated tests that only assert "no exception thrown" (see Exercise 4)
+- ❌ Letting the agent invent business rules — always anchor to a spec/requirement file
+- ❌ Tests that depend on each other's state — each test must arrange its own data
+- ❌ Hardcoded waits (`sleep(5)`) — use proper wait conditions instead
+
+### Build a test-quality prompt for your team
+
+Combine Exercise 4's `test-quality-check` prompt with this exercise's patterns to make a `qa-review.prompt.md` that runs against every new test file before it's committed.
+
+---
+
 ## Discussion Points
 
 1. **How do you balance speed and quality** when Copilot makes it easy to generate code fast?

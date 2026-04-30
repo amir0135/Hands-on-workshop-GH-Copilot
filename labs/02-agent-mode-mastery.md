@@ -264,6 +264,75 @@ Refactor all endpoints to use this format consistently.
 
 ---
 
+## Exercise 7: Pick the Right Model
+
+Copilot lets you choose the underlying model per chat (model selector at the bottom of the chat panel). The right choice saves tokens and gives better results.
+
+### Quick decision guide
+
+| Task | Model class | Why |
+|------|------------|-----|
+| Quick completion, simple refactor, "what does this regex do" | Fast / mini (e.g. GPT-4o-mini, Haiku-class) | Cheap, low-latency |
+| General coding, multi-file edits | Default flagship (GPT-4.1, Claude Sonnet) | Best balance of cost and capability |
+| Hard reasoning, architecture, gnarly bugs | Premium / reasoning (Claude Opus, o-series) | Worth the cost when stakes are high |
+| Long codebase exploration | Large-context model | Avoid losing context across many files |
+
+### Try it
+
+Run *the same* prompt in two different models on a piece of your playground code:
+
+```
+Review this file for security issues, performance, and maintainability. Be specific.
+```
+
+Compare quality of findings, latency, and (if your plan exposes it) token cost.
+
+### Rules of thumb
+
+- **Default to the mid-tier model.** Right for ~80% of work.
+- **Escalate to a reasoning model** when you've iterated twice and still aren't converging.
+- **Drop to a fast model** for trivial completions and lookup-style questions.
+- **Never use a reasoning model for `git status`-level questions** — it's expensive and slower.
+
+---
+
+## Exercise 8: Working Across Multiple Repositories
+
+Real systems span repos. Here's how to give agent mode enough context without dragging everything in.
+
+### Pattern A: Multi-root workspace
+
+VS Code supports multi-root workspaces. Open all related repos in one window:
+
+```
+File → Add Folder to Workspace…
+```
+
+Save it as `myproject.code-workspace`. Now `#codebase` and `@workspace` see all of them.
+
+### Pattern B: Contracts as the boundary
+
+When you can't open both repos, copy the API contract (OpenAPI spec, `.proto`, type definitions) from the other repo into a `contracts/` folder in the current one:
+
+```
+Implement a client for the API defined in #file:contracts/orders-api.yaml.
+Match the patterns of existing clients in #codebase.
+```
+
+Keep `contracts/` updated via a small CI sync job.
+
+### Pattern C: GitHub MCP (if approved)
+
+The GitHub MCP server lets Copilot search and read other repos directly. Governance considerations are covered in [Lab 6](06-mcp-concepts.md).
+
+### Try it
+
+1. Open this workshop repo plus *one of your real repos* as a multi-root workspace
+2. Ask: `@workspace What patterns differ between these two projects?`
+3. Notice how Copilot reasons across both
+
+---
+
 ## Common Mistakes with Agent Mode
 
 | Mistake | Why it's a problem | What to do instead |
@@ -295,6 +364,8 @@ Refactor all endpoints to use this format consistently.
 - **Iterate**: start broad, review, narrow, review, constrain
 - **Terminal integration** makes agent mode a real development partner, not just a text generator
 - **Context matters**: use `#file`, `@workspace`, and explicit context to guide the agent
+- **Pick the right model** for the task — default mid-tier, escalate when stuck, drop to fast for trivia
+- **Multi-root workspaces** are the simplest way to give agents context across dependent repos
 
 ---
 

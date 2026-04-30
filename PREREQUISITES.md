@@ -1,8 +1,10 @@
-# Prerequisites — Complete Before the Workshop
+# Welcome, Let's Get You Set Up 🎉
 
-Complete **all** steps below before the workshop day. If you get stuck, reach out to your facilitator ahead of time — do not wait until the morning of the workshop.
+We're looking forward to spending the day building with you. So we can jump straight into the good stuff (agent mode, prompt files, MCP, and the hands-on exercises), please run through the short setup below **before the workshop**.
 
----
+It shouldn't take long. If anything misbehaves, give your facilitator a shout ahead of time rather than on the morning. Much easier to sort out together when we're not against the clock.
+
+See you soon. 🙌
 
 ## 1. VS Code (Latest Stable)
 
@@ -15,26 +17,20 @@ code --version
 
 > **Why VS Code?** This workshop uses VS Code as the common environment. The patterns you learn transfer to JetBrains and Visual Studio, but the exercises are built for VS Code.
 
----
-
 ## 2. GitHub Copilot Extensions
 
 Install both extensions from the VS Code Extensions panel (`Ctrl+Shift+X` / `Cmd+Shift+X`):
 
-- **GitHub Copilot** — inline completions
-- **GitHub Copilot Chat** — chat, agent mode, prompt files
+- **GitHub Copilot**: inline completions
+- **GitHub Copilot Chat**: chat, agent mode, prompt files
 
 Verify: Open the Command Palette (`Ctrl+Shift+P` / `Cmd+Shift+P`) and type `GitHub Copilot: Status`. You should see Copilot is active.
-
----
 
 ## 3. GitHub Copilot License
 
 You need an active **GitHub Copilot Business** or **Enterprise** license. Verify by signing into GitHub in VS Code and checking that Copilot suggestions appear when you type code.
 
 If you see "Copilot is not available" or a subscription prompt, contact your GitHub admin.
-
----
 
 ## 4. Enable Agent Mode
 
@@ -46,8 +42,6 @@ Agent mode is central to this workshop. Enable it in VS Code:
 
 Verify: Open Copilot Chat (`Ctrl+Shift+I` / `Cmd+Shift+I`) and check that the mode selector at the top shows **Agent** as an option alongside Ask and Edit.
 
----
-
 ## 5. Enable Chat Participant Detection
 
 This helps Copilot automatically route requests to the right tool.
@@ -55,8 +49,6 @@ This helps Copilot automatically route requests to the right tool.
 1. Open Settings
 2. Search for `chat.participantDetection.enabled`
 3. Ensure it is **checked**
-
----
 
 ## 6. Git
 
@@ -66,8 +58,6 @@ Verify:
 ```
 git --version
 ```
-
----
 
 ## 7. Your Programming Language Toolchain
 
@@ -82,16 +72,12 @@ Install the toolchain you use daily. The labs are language-agnostic, but you wil
 
 Install the corresponding VS Code extension for your language (C# Dev Kit, Python, etc.).
 
----
-
 ## 8. Clone This Repository
 
 ```bash
 git clone https://github.com/hosseinzahed/github-copilot-hands-on-lab.git
 cd github-copilot-hands-on-lab
 ```
-
----
 
 ## 9. Recommended VS Code Settings
 
@@ -111,8 +97,6 @@ These settings optimize your Copilot experience for the workshop. Open Settings 
 }
 ```
 
----
-
 ## Pre-Workshop Checklist
 
 Before you arrive, confirm:
@@ -125,8 +109,6 @@ Before you arrive, confirm:
 - [ ] Your language toolchain installed
 - [ ] This repository cloned locally
 - [ ] You can open Copilot Chat and switch between Ask, Edit, and Agent modes
-
----
 
 ## Troubleshooting
 

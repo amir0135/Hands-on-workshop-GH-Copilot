@@ -279,7 +279,113 @@ and returns the discounted amount. It should not know about orders.
 
 ---
 
-## Exercise 5: Your Own Feature
+## Exercise 6: Requirements & Refinement (Before Code)
+
+Agentic workflows are not just for code generation. Some of the highest-leverage uses are *upstream* of code — sharpening fuzzy requirements into something testable.
+
+### Refining a fuzzy requirement
+
+```
+This is a draft requirement: "Users should be able to manage their notifications."
+
+Rewrite it as a set of testable user stories with acceptance criteria.
+Flag every ambiguity as an open question. Do NOT invent answers — list the questions.
+```
+
+### Story splitting
+
+```
+This story is too big: [paste].
+Split it into 3–5 vertical slices, each independently shippable.
+For each slice, list: scope, what's deliberately out of scope, smallest demo.
+```
+
+### "What am I missing?" review
+
+```
+Here is the spec: #file:playground/specs/notification-service.md
+
+Act as a senior engineer reviewing this spec. Identify:
+1. Missing non-functional requirements (perf, security, observability)
+2. Implicit assumptions that should be explicit
+3. Edge cases the author hasn't considered
+4. Dependencies on other systems that aren't called out
+5. Anything that will bite us in production
+
+Be ruthless. Don't be polite.
+```
+
+### Traceability
+
+```
+For each acceptance criterion in #file:playground/specs/notification-service.md,
+list the corresponding test in #file:playground/tests/.
+Identify any criterion without a test, and any test without a criterion.
+```
+
+### Why this matters
+
+Half of "bad AI code" is actually *correct code for a bad spec*. Time spent refining requirements with the agent compounds — every subsequent generation is sharper.
+
+---
+
+## Exercise 7: Architecture & Diagrams from Specs
+
+For architecture work, Copilot is genuinely good at diagram generation. The pattern: spec → diagram → review → iterate. Source files (not images) go into Git.
+
+### Mermaid (renders inline in VS Code, GitHub, Markdown)
+
+```
+Generate a Mermaid sequence diagram for the user registration flow in #file:playground/registration.py.
+Show: client, API, validation layer, database, email service. Include error paths.
+```
+
+Expected output:
+
+```mermaid
+sequenceDiagram
+    Client->>API: POST /register
+    API->>Validator: validate(email, password)
+    Validator-->>API: ok | error
+    API->>DB: INSERT user
+    DB-->>API: user_id
+    API->>EmailService: send_verification(email)
+    API-->>Client: 201 Created
+```
+
+### PlantUML
+
+```
+Generate PlantUML for the deployment topology described in #file:playground/specs/notification-service.md.
+Show all components, their network boundaries, and the protocols between them.
+```
+
+Pair with the **PlantUML** VS Code extension to preview live.
+
+### SysML v2
+
+For systems engineers — Copilot can scaffold blocks, parts, and requirement traces:
+
+```
+Generate a SysML v2 model for the notification service. Define:
+- A 'NotificationRequest' part with attributes recipient, channel, priority
+- A 'NotificationService' block with required interfaces
+- Requirement IDs that trace to the spec at #file:playground/specs/notification-service.md
+```
+
+Tip: provide the agent with one good example of your team's SysML style first, then ask it to match.
+
+### Workflow that works
+
+1. Write a short text spec
+2. Ask the agent to produce both the diagram *and* a 5-bullet design summary
+3. Review the diagram
+4. Iterate: *"Add the retry path. Show timeout as a self-loop on the API."*
+5. Commit the source (`.mmd`, `.puml`, `.sysml`) — never just the rendered image
+
+---
+
+## Exercise 8: Your Own Feature
 
 Now apply everything to a feature you would actually build at work.
 
@@ -338,6 +444,8 @@ Examples:
 - **Working with existing code** is a strength — agent mode excels at refactoring, modernizing, and extending
 - **Your judgment is the quality gate** — agent mode is the accelerator, you are the quality control
 - **Everything from Labs 1-3 compounds here** — instructions, prompt files, and agent skills all contribute
+- **Refine requirements first** — half of "bad AI code" is correct code for a bad spec
+- **Diagrams from specs** — Mermaid / PlantUML / SysML all work; commit the source, not the rendered image
 
 ---
 

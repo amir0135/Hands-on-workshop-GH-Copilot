@@ -34,6 +34,32 @@ By the end of this workshop, participants will be able to:
 | 14:30–15:15 | [Lab 5: Quality Guardrails](labs/05-quality-and-review.md) | Preventing bad patterns, review strategies, team consistency |
 | 15:15–15:45 | [Lab 6: MCP — What's Next](labs/06-mcp-concepts.md) | Conceptual overview, governance, when to adopt |
 | 15:45–16:00 | Wrap-up & Discussion | Q&A, action items, what to do Monday morning |
+| Bonus / self-paced | [Lab 7: Beyond the Editor](labs/07-advanced-topics.md) | Copilot CLI + bridge to Copilot Studio / Foundry |
+
+---
+
+## Topics from Participant Requests
+
+Participants asked about specific topics during sign-up. They are blended into the main labs where they fit, with a small bonus lab for the two that don't.
+
+| Ask | Where it's covered |
+|-----|-------------------|
+| Efficient use of agents, do's and don'ts | [Lab 2](labs/02-agent-mode-mastery.md), [Lab 5](labs/05-quality-and-review.md) |
+| Model selection (right model at right time) | [Lab 2 Ex. 7](labs/02-agent-mode-mastery.md#exercise-7-pick-the-right-model) |
+| Working with dependent / multiple repositories | [Lab 2 Ex. 8](labs/02-agent-mode-mastery.md#exercise-8-working-across-multiple-repositories) |
+| Token reduction (Caveman Mode) | [Lab 3 Ex. 6](labs/03-prompt-files-and-instructions.md#exercise-6-token-conscious-patterns-caveman-mode) |
+| Skills (`SKILL.md`), reusable across projects | [Lab 3 Ex. 7](labs/03-prompt-files-and-instructions.md#exercise-7-skills-skillmd--packaging-domain-knowledge) |
+| `lessons.md` — saving lessons learned to lower tokens | [Lab 3 Ex. 8](labs/03-prompt-files-and-instructions.md#exercise-8-lessonsmd--stop-re-discovering-the-same-bugs) |
+| Persistent memory (user / repo / session) | [Lab 3 Ex. 9](labs/03-prompt-files-and-instructions.md#exercise-9-persistent-memory-built-in) |
+| Token reduction checklist | [Lab 3 Ex. 10](labs/03-prompt-files-and-instructions.md#exercise-10-token-reduction-checklist) |
+| Agents for requirements & refinement, not just code | [Lab 4 Ex. 6](labs/04-agentic-workflows.md#exercise-6-requirements--refinement-before-code) |
+| Architecture work — Mermaid, PlantUML, SysML v2 | [Lab 4 Ex. 7](labs/04-agentic-workflows.md#exercise-7-architecture--diagrams-from-specs) |
+| Test automation use cases (non-developers) | [Lab 5 Ex. 7](labs/05-quality-and-review.md#exercise-7-test-automation-track-qa--automation-engineers) |
+| MCP integration & tools | [Lab 6](labs/06-mcp-concepts.md) |
+| Copilot CLI usage | [Lab 7 §1](labs/07-advanced-topics.md#section-1-github-copilot-cli) |
+| Bridge from VS Code → Copilot Studio / Microsoft Foundry | [Lab 7 §2](labs/07-advanced-topics.md#section-2-from-vs-code--copilot-studio--microsoft-foundry) |
+| Improving how you "promote" / phrase a task | [Lab 2 Ex. 4](labs/02-agent-mode-mastery.md), [Lab 4](labs/04-agentic-workflows.md) |
+| Context-aware agents on legacy code | [Lab 1](labs/01-team-configuration.md), [Lab 2 Ex. 8](labs/02-agent-mode-mastery.md#exercise-8-working-across-multiple-repositories), [Lab 4 Ex. 4](labs/04-agentic-workflows.md) |
 
 ---
 
@@ -85,4 +111,5 @@ labs/
   04-agentic-workflows.md              ← Lab 4: End-to-end agentic development
   05-quality-and-review.md             ← Lab 5: Quality guardrails
   06-mcp-concepts.md                   ← Lab 6: MCP overview (conceptual)
+  07-advanced-topics.md                ← Lab 7: Beyond the editor — CLI & Studio/Foundry bridge (bonus)
 ```

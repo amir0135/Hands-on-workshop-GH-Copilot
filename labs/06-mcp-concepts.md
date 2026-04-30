@@ -211,3 +211,5 @@ If your team wants to explore MCP after this workshop:
 ---
 
 **Back to:** [Workshop README →](../README.md)
+
+**Bonus / self-paced:** [Lab 7: Beyond the Editor →](07-advanced-topics.md) — Copilot CLI and the bridge to Copilot Studio / Microsoft Foundry

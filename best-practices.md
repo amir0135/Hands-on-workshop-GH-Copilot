@@ -100,6 +100,9 @@ A one-page reference for daily use. Print it, pin it, share it.
 - **Ask mode for questions** — Don't use Agent mode just to ask a question (Agent costs more tokens)
 - **Be specific** — Vague prompts cause longer, more expensive back-and-forth
 - **Review at each step** — Catching issues early avoids costly multi-iteration loops
+- **Pick the right model** — Don't use a reasoning model for `git status` questions. See [Lab 7 §1](labs/07-advanced-topics.md#section-1-model-selection--right-model-right-time)
+- **Keep a `lessons.md`** — One-line entries that stop the agent re-discovering known gotchas. See [Lab 7 §3b](labs/07-advanced-topics.md#3b-lessonsmd--capture-what-went-wrong-save-tokens-next-time)
+- **Package recurring workflows as `SKILL.md`** — Smaller, scoped context beats one giant instruction file. See [Lab 7 §3a](labs/07-advanced-topics.md#3a-skillmd--packaging-domain-knowledge)
 
 ---
 
