@@ -6,7 +6,7 @@ It shouldn't take long. If anything misbehaves, give your facilitator a shout ah
 
 See you soon. 🙌
 
-## 1. VS Code (Latest Stable)
+## 1. VS Code (Latest Stable — 1.99 or newer, ideally 1.105+)
 
 Download and install from [code.visualstudio.com](https://code.visualstudio.com/).
 
@@ -14,6 +14,15 @@ Verify:
 ```
 code --version
 ```
+
+> **Minimum required version: 1.99** (when chat modes were introduced).
+> **Recommended: the latest stable release** (1.105 or newer at the time of writing). The chat UI evolves quickly — this workshop is written against the current VS Code mode picker which shows **Agent**, **Ask**, and **Plan**.
+>
+> If your corporate Software Center only offers an older build (for example 1.117 or earlier), please update **before** the workshop:
+> - **macOS / personal install:** `Code → Check for Updates…` (or download the latest from the link above)
+> - **Windows / managed install:** request the latest stable from your IT team, or install the User-scope build from [code.visualstudio.com](https://code.visualstudio.com/) into your profile if your policy allows it
+>
+> Older builds may be missing the **Plan** mode, MCP support, or current prompt-file/instructions behavior — and several lab exercises will not work as written.
 
 > **Why VS Code?** This workshop uses VS Code as the common environment. The patterns you learn transfer to JetBrains and Visual Studio, but the exercises are built for VS Code.
 
@@ -34,13 +43,15 @@ If you see "Copilot is not available" or a subscription prompt, contact your Git
 
 ## 4. Enable Agent Mode
 
-Agent mode is central to this workshop. Enable it in VS Code:
+Agent mode is central to this workshop. On recent VS Code builds it is enabled by default. To confirm:
 
 1. Open Settings (`Ctrl+,` / `Cmd+,`)
 2. Search for `chat.agent.enabled`
 3. Ensure it is **checked** (enabled)
 
-Verify: Open Copilot Chat (`Ctrl+Shift+I` / `Cmd+Shift+I`) and check that the mode selector at the top shows **Agent** as an option alongside Ask and Edit.
+Verify: Open Copilot Chat (`Ctrl+Shift+I` / `Cmd+Shift+I`) and click the mode picker at the bottom-left of the chat input. You should see **Agent**, **Ask**, and **Plan** as options (plus *Configure Custom Agents…*).
+
+> **Heads-up about "Edit" mode.** Older versions of VS Code listed a separate **Edit** mode. In current builds, editing files is handled directly by **Agent** mode, and a new **Plan** mode has taken its slot in the picker. If a lab still says *"Edit mode"*, treat it as **Agent mode**. If your picker only shows *Ask / Edit / Agent*, your VS Code is out of date — please update (see step 1).
 
 ## 5. Enable Chat Participant Detection
 
@@ -101,14 +112,14 @@ These settings optimize your Copilot experience for the workshop. Open Settings 
 
 Before you arrive, confirm:
 
-- [ ] VS Code latest stable installed
+- [ ] VS Code latest stable installed (run `code --version` — must be **1.99 or newer**, ideally 1.105+)
 - [ ] GitHub Copilot and GitHub Copilot Chat extensions installed and active
 - [ ] Copilot license verified (suggestions appear when coding)
 - [ ] Agent mode enabled in settings
 - [ ] Git installed
 - [ ] Your language toolchain installed
 - [ ] This repository cloned locally
-- [ ] You can open Copilot Chat and switch between Ask, Edit, and Agent modes
+- [ ] You can open Copilot Chat and switch between **Agent**, **Ask**, and **Plan** in the mode picker
 
 ## Troubleshooting
 
@@ -117,10 +128,16 @@ Before you arrive, confirm:
 - Verify your license at [github.com/settings/copilot](https://github.com/settings/copilot)
 - Reload VS Code window (`Ctrl+Shift+P` → "Developer: Reload Window")
 
-**Agent mode not showing:**
-- Update VS Code to the latest version
-- Update both Copilot extensions to latest
+**Agent mode not showing, or only Ask / Edit / Agent appear (no Plan):**
+- Update VS Code to the latest version (`Code → Check for Updates…`). Minimum 1.99, recommended 1.105+
+- Update both Copilot extensions to latest (Extensions panel → check for updates)
 - Check `chat.agent.enabled` is true in settings
+- Reload the window (`Ctrl+Shift+P` → "Developer: Reload Window") after updating
+
+**My Software Center only has VS Code 1.117 (or older):**
+- That build pre-dates the current chat-mode picker and several features used in the labs. Either:
+  1. Ask IT to push the latest stable, or
+  2. Install the User-scope build from [code.visualstudio.com](https://code.visualstudio.com/) into your own profile (no admin rights needed on most policies).
 
 **Extensions not installing:**
 - Check your network/proxy settings allow access to the VS Code Marketplace

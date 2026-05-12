@@ -68,11 +68,11 @@ Participants asked about specific topics during sign-up. They are blended into t
 Before the workshop, every participant must complete the setup in **[PREREQUISITES.md](PREREQUISITES.md)**.
 
 **Summary:**
-- VS Code (latest stable) with GitHub Copilot and GitHub Copilot Chat extensions
+- VS Code (latest stable — **1.99 or newer**, ideally 1.105+) with GitHub Copilot and GitHub Copilot Chat extensions
 - GitHub Copilot license (Business or Enterprise)
 - Git installed and configured
 - A programming language toolchain installed (.NET, Python, Java, TypeScript — whatever you use daily)
-- Agent mode enabled in VS Code settings
+- Agent mode enabled in VS Code settings (the chat mode picker should show **Agent**, **Ask**, **Plan**)
 
 ---
 

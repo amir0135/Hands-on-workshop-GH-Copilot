@@ -11,13 +11,14 @@ Before anything else, confirm your environment is ready. Work through this check
 
 ### Checklist
 
-- [ ] **VS Code** is open and running the latest stable version
+- [ ] **VS Code** is open and running the latest stable version (`code --version` — must be **1.99 or newer**, ideally 1.105+)
   - Check: `Help → About` or `code --version` in terminal
 - [ ] **GitHub Copilot** extension is installed and showing the Copilot icon in the bottom status bar
 - [ ] **GitHub Copilot Chat** extension is installed
 - [ ] **You are signed into GitHub** in VS Code (bottom-left profile icon)
 - [ ] **Copilot is active** — open any code file and start typing. You should see ghost-text suggestions
-- [ ] **Agent mode is available** — open Copilot Chat (`Ctrl+Shift+I` / `Cmd+Shift+I`) and check the mode dropdown at the top. You should see **Ask**, **Edit**, and **Agent**
+- [ ] **Agent mode is available** — open Copilot Chat (`Ctrl+Shift+I` / `Cmd+Shift+I`) and click the mode picker at the bottom-left of the chat input. You should see **Agent**, **Ask**, and **Plan**
+  - If you only see **Ask / Edit / Agent**, your VS Code is out of date — update it (`Code → Check for Updates…`) and reload the window before continuing
 - [ ] **Your language toolchain** is installed — run the relevant version command in terminal:
 
 ```bash
@@ -37,7 +38,9 @@ Don't wait — raise your hand now. Refer to [PREREQUISITES.md](../PREREQUISITES
 
 ## Part 2: Know Your Copilot Modes (10 min)
 
-This workshop focuses heavily on **agent mode**, but you should understand all three modes and when to use each. Try each one now.
+This workshop focuses heavily on **agent mode**, but you should understand the three modes in the current VS Code chat picker and when to use each. Try each one now.
+
+> **Note on "Edit" mode.** Earlier VS Code releases had a separate **Edit** mode. In current builds the picker shows **Agent**, **Ask**, and **Plan** — file edits are now done directly in **Agent** mode, and **Plan** has taken Edit's place in the picker. If you see references to "Edit mode" in older notes or screenshots, treat them as **Agent mode**.
 
 ### Mode 1: Ask
 
@@ -50,9 +53,23 @@ What is the difference between async and await?
 
 **Ask** is for questions — explaining code, answering technical questions, learning. It does NOT change files.
 
-### Mode 2: Edit
+### Mode 2: Plan
 
-Switch to **Edit** mode.
+Switch to **Plan** mode.
+
+Try:
+```
+I want to add a calculator module with add, subtract, multiply, and divide functions,
+including error handling for division by zero. Outline the steps and files you would create.
+```
+
+**Plan** mode produces a step-by-step proposal *without* executing it or editing files. Use it when you want to think through an approach, review the plan, then hand it off to Agent mode to actually do the work.
+
+### Mode 3: Agent (this is where editing happens now)
+
+Switch to **Agent** mode.
+
+First, a small targeted edit (this is what "Edit mode" used to do):
 
 1. Create a file `playground/hello.py` (or `.cs`, `.ts`, `.java` — your language) with a simple function:
 
@@ -61,25 +78,20 @@ def greet(name):
     return "Hello, " + name
 ```
 
-2. Select the function, then in Copilot Chat (Edit mode) type:
+2. Select the function, then in Copilot Chat (Agent mode) type:
 
 ```
 Add type hints and handle the case where name is empty
 ```
 
-**Edit** modifies specific code you point it to. It works on the files and selections you reference.
+Then, a multi-file task that shows the full power of Agent mode:
 
-### Mode 3: Agent
-
-Switch to **Agent** mode.
-
-Type:
 ```
-Create a playground/calculator file with add, subtract, multiply, and divide functions. 
+Create a playground/calculator file with add, subtract, multiply, and divide functions.
 Include error handling for division by zero. Use [your language].
 ```
 
-**Agent** plans and executes autonomously — it creates files, writes code, and can run terminal commands. This is the primary mode for this workshop.
+**Agent** plans and executes autonomously — it edits files, creates new ones, and can run terminal commands. This is the primary mode for this workshop.
 
 > **Review the diff before accepting.** Agent mode will show you proposed changes. Get in the habit of reading them carefully — this is the single most important skill you will practice today.
 
