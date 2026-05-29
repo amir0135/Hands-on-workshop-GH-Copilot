@@ -1,7 +1,10 @@
 # Lab 2: Agent Mode Mastery
 
-**Duration:** ~60 minutes
+**Duration:** ~65 minutes
 **Goal:** Move beyond basic chat into agent mode — Copilot's most powerful interface for real development work. Learn when to use it, how to guide it, and how to think about it as a **junior developer on your team**.
+
+> **🌱 Foundation path:** Exercises 1–4 — run your first agent task, learn to review the diff, and practise turning vague prompts into sharp ones. This is the single most-used skill in the whole workshop.
+> **🚀 Advanced stretch:** Exercises 7–8 (model selection, multi-repo) plus the stretch section at the end. If agent mode is already routine for you, start there.
 
 ---
 
@@ -330,6 +333,20 @@ The GitHub MCP server lets Copilot search and read other repos directly. Governa
 1. Open this workshop repo plus *one of your real repos* as a multi-root workspace
 2. Ask: `@workspace What patterns differ between these two projects?`
 3. Notice how Copilot reasons across both
+
+---
+
+## 🚀 Advanced Stretch
+
+For people who already steer agent mode comfortably:
+
+1. **The "checkpoint and revert" workflow.** Give the agent a deliberately ambitious task, let it run, then practise rejecting and reverting partway through. Learn to recover cleanly instead of accepting a mess. Knowing how to *undo* is what makes ambitious prompts safe.
+2. **Context starvation vs. context flooding.** Run the same task three ways: (a) no context hints, (b) precise `#file` references, (c) the entire folder attached. Compare quality, speed, and token cost. Find the sweet spot.
+3. **Steer mid-flight.** While the agent is working, interrupt it and redirect ("stop — use the repository pattern instead"). Practise course-correcting without restarting.
+4. **Model bake-off.** Pick one real task and run it across a fast model and a reasoning model (Exercise 7). Record: time, number of iterations, and quality of the result. Build your own heuristic for "when is the expensive model worth it?"
+5. **Agent-writes-the-prompt.** Ask the agent to *interview you* before coding: "Ask me 5 clarifying questions before you start." Notice how much better the output is when it extracts requirements first — a preview of Lab 4.
+
+> Capture your personal "when to use agent mode" rule of thumb. You'll compare notes at the break.
 
 ---
 

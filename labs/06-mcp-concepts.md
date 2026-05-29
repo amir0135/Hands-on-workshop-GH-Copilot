@@ -1,9 +1,11 @@
 # Lab 6: MCP — What's Next (Conceptual)
 
-**Duration:** ~30 minutes
+**Duration:** ~25 minutes
 **Goal:** Understand what the Model Context Protocol (MCP) enables, when your team should consider adopting it, and what governance is needed — without installing or configuring anything.
 
 > **This lab is intentionally conceptual.** MCP requires security review, approval workflows, and infrastructure decisions that are beyond the scope of a hands-on workshop. The goal here is to give you the knowledge to have an informed conversation with your team about if and when to adopt MCP.
+
+> **🌱 Everyone:** read the concept and the without/with examples — this is shared vocabulary. **🚀 Advanced:** focus on the governance and "when to adopt" decisions; you've likely already seen MCP servers in your tool list.
 
 ---
 
@@ -210,6 +212,6 @@ If your team wants to explore MCP after this workshop:
 
 ---
 
-**Back to:** [Workshop README →](../README.md)
+**Next:** [Lab 10: Capstone Team Challenge →](10-capstone.md)
 
 **Bonus / self-paced:** [Lab 7: Beyond the Editor →](07-advanced-topics.md) — Copilot CLI and the bridge to Copilot Studio / Microsoft Foundry

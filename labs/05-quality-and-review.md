@@ -3,6 +3,9 @@
 **Duration:** ~45 minutes
 **Goal:** Establish patterns that prevent AI-generated code from becoming "instant legacy code." Learn how to use Copilot to catch problems, enforce standards, and maintain quality as teams adopt agent workflows.
 
+> **🌱 Foundation path:** Exercises 1–2 — practise the review-before-accept discipline and use Copilot to review Copilot. This habit is what separates teams that scale Copilot from teams that drown in AI debt.
+> **🚀 Advanced stretch:** Exercise 7 (test-automation track) plus the stretch section — build a reusable quality playbook for your team.
+
 ---
 
 ## The Problem: Instant Legacy Code
@@ -418,6 +421,20 @@ Combine Exercise 4's `test-quality-check` prompt with this exercise's patterns t
 
 ---
 
+## 🚀 Advanced Stretch
+
+If you've internalised review-before-accept and want more:
+
+1. **Assemble a quality playbook.** Combine your security-review, quality-check, and consistency prompts into one `playground/.github/prompts/` set, plus a short README that says when to run each. This is a deliverable you can take to work.
+2. **CI-gate vs. PR-review.** Draft which checks belong in automated CI (lint, tests, secret scan) versus human PR review (design, naming, intent). Generate a sample GitHub Actions / pipeline snippet for the automatable half.
+3. **Adversarial review.** Ask the agent to *attack* a piece of its own generated code: "Find three ways this could be exploited or break in production." Compare with what your normal review would have caught.
+4. **Shallow-test detector.** Take an AI-generated test file and prompt the agent to flag tests that only assert "no exception thrown" and rewrite them to assert real behaviour. Measure the depth improvement.
+5. **Consistency audit.** Generate two similar files in separate sessions, then ask the agent to reconcile their patterns into one consistent style. This is the "minutes-apart inconsistency" problem from the intro, solved.
+
+> Save your quality playbook — it's a required input to the Lab 10 capstone scoring.
+
+---
+
 ## Discussion Points
 
 1. **How do you balance speed and quality** when Copilot makes it easy to generate code fast?
@@ -439,4 +456,4 @@ Combine Exercise 4's `test-quality-check` prompt with this exercise's patterns t
 
 ---
 
-**Next:** [Lab 6: MCP — What's Next →](06-mcp-concepts.md)
+**Next:** [Lab 8: Debugging & Taming Legacy Code →](08-debugging-and-legacy-code.md)

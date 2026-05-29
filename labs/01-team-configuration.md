@@ -3,6 +3,9 @@
 **Duration:** ~45 minutes
 **Goal:** Set up Copilot so it produces consistent, high-quality output that matches your team's standards — without every developer having to repeat the same instructions.
 
+> **🌱 Foundation path:** Exercises 1–2 — create a `copilot-instructions.md` and watch Copilot's behaviour change. That alone is a career-long skill.
+> **🚀 Advanced stretch:** Jump to the stretch section at the end for layered instructions, `applyTo` scoping, and measuring instruction effectiveness.
+
 ---
 
 ## Why This Matters
@@ -162,6 +165,20 @@ Now apply what you learned to a **real** scenario. Think about your actual proje
 
 3. Test your instructions by asking Copilot to generate code that would typically violate your standards
 4. Iterate: If Copilot doesn't follow an instruction, make it more specific
+
+---
+
+## 🚀 Advanced Stretch
+
+Finished the core exercises? Push further:
+
+1. **Layer instructions with `applyTo`.** Create a scoped `.github/instructions/tests.instructions.md` with `applyTo: "**/*.test.*,**/*_test.*"` that adds testing-only rules (e.g. "every test must assert behaviour, not just absence of errors"). Confirm it only activates when you touch test files.
+2. **Write a "house style" that's genuinely opinionated.** Encode a real, slightly controversial convention from your team (e.g. "no inheritance more than one level deep", "functions over 30 lines must be justified in a comment"). Generate code and see if Copilot honours it.
+3. **Measure effectiveness.** Generate the same feature *with* and *without* your instructions file (rename it temporarily). Diff the two outputs. Quantify what the instructions actually changed — this is the evidence you'll use to sell adoption to your team.
+4. **Instruction conflicts.** Deliberately add two contradicting rules and observe how Copilot resolves them. Learn where to be precise and where over-specifying backfires.
+5. **Onboarding angle.** Draft the 5 instructions that would most help a brand-new hire produce code that passes your review on day one. This is the highest-leverage list most teams never write down.
+
+> **Team-lead track:** Sketch the rollout plan — who owns the file, how changes are reviewed, and how you'll keep it from rotting. Capture it; you'll reference it in Lab 10.
 
 ---
 

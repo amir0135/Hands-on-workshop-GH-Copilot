@@ -3,6 +3,9 @@
 **Duration:** ~60 minutes
 **Goal:** Build a complete feature end-to-end using agentic workflows — from specification to tested, working code. This is where everything from Labs 1-3 comes together.
 
+> **🌱 Foundation path:** Exercises 1–3 — write a short spec, hand it to the agent, and build the feature incrementally with review at each step. The spec-first habit is the whole point.
+> **🚀 Advanced stretch:** Exercises 6–7 (requirements refinement, architecture diagrams) plus the stretch section — great if you already build features with agent mode.
+
 ---
 
 ## The Agentic Development Loop
@@ -424,6 +427,20 @@ Examples:
 | Never iterating | Mediocre first-draft code ships | Always do at least one refinement pass |
 | Skipping tests | No confidence in correctness | Tests are not optional — they are the verification step |
 | Over-prompting | Too many requirements in one prompt | Split into focused, sequential prompts |
+
+---
+
+## 🚀 Advanced Stretch
+
+For those who finished the build and want a harder challenge:
+
+1. **Spec-to-shipped, one sitting.** Take the notification service and add a *new* channel (e.g. SMS or webhook) end-to-end: update the spec first, regenerate, add tests, refactor. Do it without writing implementation code yourself — only steering.
+2. **Make it fail, then recover.** Introduce a breaking requirement change mid-build ("priority is now an enum, not a string"). Drive the agent through the refactor and watch which tests catch the break.
+3. **TDD purist run.** Have the agent write *all* tests from the spec first (red), then implement only enough to pass (green), then refactor. Resist letting it write implementation early.
+4. **Cross-cutting concern.** Add structured logging or input-validation consistently across every endpoint via a single well-scoped prompt. Judge how consistently the agent applies a cross-cutting change.
+5. **Architecture-first.** Before coding, generate a Mermaid sequence diagram of the request flow (Exercise 7), review it, *then* generate code that matches the diagram. Compare against building code-first.
+
+> Keep your spec and result — it's a strong starting point for the Lab 10 capstone.
 
 ---
 

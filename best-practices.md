@@ -17,6 +17,7 @@ A one-page reference for daily use. Print it, pin it, share it.
 | `.github/copilot-instructions.md` | Team coding standards | Entire repo, always on |
 | `.instructions.md` (with `applyTo`) | Module-specific rules | Matching files, always on |
 | `.github/prompts/*.prompt.md` | Reusable workflows | On demand via `/` |
+| `.github/chatmodes/*.chatmode.md` | A specialist role (persona + tools) | A mode you switch into |
 
 **Start with:** `copilot-instructions.md` covering naming, error handling, testing, security.
 
@@ -134,3 +135,35 @@ A one-page reference for daily use. Print it, pin it, share it.
 3. Create 2-3 prompt files for your team's most common workflows
 4. Share with the team via a pull request
 5. Iterate based on what works and what doesn't
+
+---
+
+## New vs. Advanced — Where to Focus
+
+| 🌱 If you're newer | 🚀 If you're advanced |
+|--------------------|----------------------|
+| Master the three modes and review-before-accept | Build custom chat modes for recurring roles |
+| Write one good `copilot-instructions.md` | Layer scoped `.instructions.md` with `applyTo` |
+| Use spec-first for one feature | Chain prompt files and modes into workflows |
+| Reproduce a bug with a failing test, then fix | Use characterization tests to refactor legacy code |
+| Ask Copilot to explain code you don't know | Delegate self-contained research to a subagent |
+
+---
+
+## The Debugging Loop
+
+> **Understand → Reproduce → Fix → Verify**
+
+- Make Copilot **explain and quote the line** before fixing
+- **Reproduce** with a failing test that encodes the spec (not the buggy behaviour)
+- Fix with the **smallest** change; re-run tests
+- For legacy code with no tests: write **characterization tests** first, then refactor
+
+---
+
+## Custom Modes & Subagents (Personalize Copilot)
+
+- **Custom chat mode** = a specialist you hire for a shift (persona + rules + scoped tools)
+- Scope each mode to **one job**; restrict tools to reinforce the role
+- **Compose modes**: Plan → Agent → reviewer → docs-writer
+- **Subagent** = delegate a bounded, self-contained task; read its report, don't micromanage

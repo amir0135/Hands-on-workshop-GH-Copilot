@@ -3,6 +3,9 @@
 **Duration:** ~45 minutes
 **Goal:** Create reusable prompt files (`.prompt.md`) and scoped instruction files (`.instructions.md`) that your team can share, version, and refine together — turning tribal knowledge into something Copilot consistently applies.
 
+> **🌱 Foundation path:** Exercises 1–3 — build and run your first prompt file, then a scoped instructions file. You'll leave with reusable workflows you can commit today.
+> **🚀 Advanced stretch:** Exercises 6–10 (Caveman Mode, skills, `lessons.md`, persistent memory, token budgeting) are the advanced track — dive straight in if prompt files are already familiar.
+
 ---
 
 ## Why Prompt Files Matter
@@ -563,6 +566,21 @@ Pulling Exercises 6–9 together — a checklist to reduce tokens without sacrif
 | Specific prompts | Fewer iterations needed | Your prompts |
 | Right-sized model | Don't use a reasoning model for trivia (see [Lab 2 Ex. 7](02-agent-mode-mastery.md#exercise-7-pick-the-right-model)) | Model selector |
 | Scoped `applyTo` patterns | Instructions only load when relevant | `.instructions.md` frontmatter |
+
+---
+
+## 🚀 Advanced Stretch
+
+If you've worked through the exercises and want to go further:
+
+1. **Build a prompt-file library.** Create three more `.prompt.md` files for workflows your team does weekly (e.g. `generate-migration`, `write-adr`, `triage-bug`). Give each precise frontmatter and a clear single purpose.
+2. **Chain prompt files.** Write a prompt file whose output is the input to another (spec → implementation → review). Run the chain end-to-end and note where hand-offs break down.
+3. **Author a real `SKILL.md`.** Package one genuine recurring workflow from your job (a deployment, a release checklist, a data migration) so it's discoverable and only loaded when relevant. Test that Copilot picks it up by name.
+4. **Seed `lessons.md` from a real bug.** Recall a gotcha that bit your team twice. Write the one-line lesson that would have prevented the second time. Verify the agent respects it.
+5. **Token budget challenge.** Take a verbose prompt you actually use and cut it by 50% using Caveman Mode and scoped context — without losing output quality. Measure before/after.
+6. **Governance design.** Draft how prompt files and skills get reviewed and merged in your repo (who approves, where they live, how they're versioned). Bring it to Lab 10.
+
+> Commit at least one new prompt file or skill to your `playground/` — you may reuse it in the capstone.
 
 ---
 

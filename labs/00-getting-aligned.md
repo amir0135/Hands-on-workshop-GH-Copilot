@@ -3,6 +3,22 @@
 **Duration:** ~30 minutes
 **Goal:** Make sure everyone is set up, on the same page, and has a shared baseline before we start the hands-on labs.
 
+> **🌱 New to Copilot? 🚀 Seasoned user?** This lab is for both. Newcomers: take your time on Parts 1–2 — they're your foundation. Experienced users: skim the setup checklist, do the skill self-assessment honestly, then help a neighbour while you wait. Throughout the day, look for the **🌱 Foundation path** (do these) and **🚀 Advanced stretch** (optional, go deeper) markers.
+
+---
+
+## Part 0: Skill Self-Assessment (2 min)
+
+Be honest — this just helps you choose which track to lean into today. There are no wrong answers.
+
+| If you... | Lean into... |
+|-----------|--------------|
+| Have never used Copilot, or only see grey "ghost text" completions | **🌱 Foundation path** in every lab. Follow steps exactly. Ask questions early. |
+| Use Copilot Chat daily but rarely use agent mode | Foundation path + the first **🚀 stretch** in each lab. You'll move fast. |
+| Live in agent mode and have opinions about models and context | **🚀 Advanced stretch** challenges. Skim the basics, spend your time on the hard problems and team-scale patterns. |
+
+> Write your track on a sticky note. If you finish the 🌱 Foundation path of a lab before the room does, **do not wait** — start the 🚀 stretch.
+
 ---
 
 ## Part 1: Verify Your Setup (10 min)
@@ -152,6 +168,19 @@ If it doesn't, troubleshoot now:
 - **Copilot doesn't create files?** → Ensure you're in Agent mode, not Ask
 - **Terminal commands fail?** → Check your language toolchain is installed
 - **Tests don't run?** → Make sure your test framework is available (pytest, xunit, jest, etc.)
+
+---
+
+## 🚀 Advanced Stretch (optional, if you finished early)
+
+Already comfortable with the three modes? Try these while the room catches up:
+
+1. **Compare modes on one task.** Ask the *same* question in Ask, Plan, and Agent mode: *"Add retry-with-backoff to the FizzBuzz runner and prove it works."* Note how each mode responds differently and when you'd reach for each.
+2. **Prompt quality experiment.** Run the warm-up twice: once with a one-line vague prompt, once with an explicit spec (inputs, edge cases, test count, language). Compare the diffs. This previews the core skill of Lab 2 and Lab 4.
+3. **Inspect the context.** In agent mode, ask: *"What files and context are you using to answer me right now?"* Get familiar with how the agent sees your workspace — you'll exploit this in every later lab.
+4. **Tooling tour.** Open the Copilot Chat overflow menu and find: the model picker, the mode picker, `#` context attachments, and `/` commands. You'll use all four today.
+
+> Capture one surprising observation. You'll share it at the next break.
 
 ---
 
