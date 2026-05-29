@@ -282,7 +282,7 @@ and returns the discounted amount. It should not know about orders.
 
 ---
 
-## Exercise 6: Requirements & Refinement (Before Code)
+## Exercise 5: Requirements & Refinement (Before Code)
 
 Agentic workflows are not just for code generation. Some of the highest-leverage uses are *upstream* of code — sharpening fuzzy requirements into something testable.
 
@@ -332,7 +332,7 @@ Half of "bad AI code" is actually *correct code for a bad spec*. Time spent refi
 
 ---
 
-## Exercise 7: Architecture & Diagrams from Specs
+## Exercise 6: Architecture & Diagrams from Specs
 
 For architecture work, Copilot is genuinely good at diagram generation. The pattern: spec → diagram → review → iterate. Source files (not images) go into Git.
 
@@ -388,7 +388,7 @@ Tip: provide the agent with one good example of your team's SysML style first, t
 
 ---
 
-## Exercise 8: Your Own Feature
+## Exercise 7: Your Own Feature
 
 Now apply everything to a feature you would actually build at work.
 
@@ -438,7 +438,7 @@ For those who finished the build and want a harder challenge:
 2. **Make it fail, then recover.** Introduce a breaking requirement change mid-build ("priority is now an enum, not a string"). Drive the agent through the refactor and watch which tests catch the break.
 3. **TDD purist run.** Have the agent write *all* tests from the spec first (red), then implement only enough to pass (green), then refactor. Resist letting it write implementation early.
 4. **Cross-cutting concern.** Add structured logging or input-validation consistently across every endpoint via a single well-scoped prompt. Judge how consistently the agent applies a cross-cutting change.
-5. **Architecture-first.** Before coding, generate a Mermaid sequence diagram of the request flow (Exercise 7), review it, *then* generate code that matches the diagram. Compare against building code-first.
+5. **Architecture-first.** Before coding, generate a Mermaid sequence diagram of the request flow (Exercise 6), review it, *then* generate code that matches the diagram. Compare against building code-first.
 
 > Keep your spec and result — it's a strong starting point for the Lab 10 capstone.
 

@@ -84,8 +84,8 @@ Participants asked about specific topics during sign-up. They are blended into t
 | `lessons.md` — saving lessons learned to lower tokens | [Lab 3 Ex. 8](labs/03-prompt-files-and-instructions.md#exercise-8-lessonsmd--stop-re-discovering-the-same-bugs) |
 | Persistent memory (user / repo / session) | [Lab 3 Ex. 9](labs/03-prompt-files-and-instructions.md#exercise-9-persistent-memory-built-in) |
 | Token reduction checklist | [Lab 3 Ex. 10](labs/03-prompt-files-and-instructions.md#exercise-10-token-reduction-checklist) |
-| Agents for requirements & refinement, not just code | [Lab 4 Ex. 6](labs/04-agentic-workflows.md#exercise-6-requirements--refinement-before-code) |
-| Architecture work — Mermaid, PlantUML, SysML v2 | [Lab 4 Ex. 7](labs/04-agentic-workflows.md#exercise-7-architecture--diagrams-from-specs) |
+| Agents for requirements & refinement, not just code | [Lab 4 Ex. 5](labs/04-agentic-workflows.md#exercise-5-requirements--refinement-before-code) |
+| Architecture work — Mermaid, PlantUML, SysML v2 | [Lab 4 Ex. 6](labs/04-agentic-workflows.md#exercise-6-architecture--diagrams-from-specs) |
 | Test automation use cases (non-developers) | [Lab 5 Ex. 7](labs/05-quality-and-review.md#exercise-7-test-automation-track-qa--automation-engineers) |
 | Debugging failing code with Copilot | [Lab 8](labs/08-debugging-and-legacy-code.md) |
 | Understanding & modernizing legacy / unfamiliar code | [Lab 8](labs/08-debugging-and-legacy-code.md) |

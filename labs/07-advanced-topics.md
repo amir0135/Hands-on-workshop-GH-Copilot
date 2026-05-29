@@ -127,8 +127,8 @@ The earlier draft of this lab covered model selection, multi-repo work, skills/m
 | `lessons.md` to stop re-discovering bugs | [Lab 3 Exercise 8](03-prompt-files-and-instructions.md#exercise-8-lessonsmd--stop-re-discovering-the-same-bugs) |
 | Persistent memory (user / repo / session) | [Lab 3 Exercise 9](03-prompt-files-and-instructions.md#exercise-9-persistent-memory-built-in) |
 | Token reduction checklist | [Lab 3 Exercise 10](03-prompt-files-and-instructions.md#exercise-10-token-reduction-checklist) |
-| Requirements & refinement workflows | [Lab 4 Exercise 6](04-agentic-workflows.md#exercise-6-requirements--refinement-before-code) |
-| Architecture diagrams (Mermaid / PlantUML / SysML) | [Lab 4 Exercise 7](04-agentic-workflows.md#exercise-7-architecture--diagrams-from-specs) |
+| Requirements & refinement workflows | [Lab 4 Exercise 5](04-agentic-workflows.md#exercise-5-requirements--refinement-before-code) |
+| Architecture diagrams (Mermaid / PlantUML / SysML) | [Lab 4 Exercise 6](04-agentic-workflows.md#exercise-6-architecture--diagrams-from-specs) |
 | Test automation track (QA-focused) | [Lab 5 Exercise 7](05-quality-and-review.md#exercise-7-test-automation-track-qa--automation-engineers) |
 
 ---
