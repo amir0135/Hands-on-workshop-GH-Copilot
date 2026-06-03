@@ -237,6 +237,8 @@ Agent mode uses context from your workspace to make better decisions. Learn to c
 
 ### Using `#file` and `#codebase`
 
+> **`#` adds context — it does not run anything.** Use `#` to *point Copilot at* a specific file, folder, symbol, or tool (e.g. `#file:app.py`, `#codebase`, `#selection`) so it considers that information. That's different from `/`, which **runs** a prompt file or command (e.g. `/code-review` — covered in Lab 3). Rule of thumb: `#` = "look at this", `/` = "do this".
+
 Try these:
 
 ```

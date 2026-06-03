@@ -59,8 +59,14 @@ If the code looks good, say so — don't invent issues.
 
 1. Open any code file in your `playground/` folder (use one from Lab 2, or create something new)
 2. Open Copilot Chat in **Agent** mode
-3. Type `/` — you should see your prompt file listed
-4. Select `code-review` and run it
+3. Type `/` — this is how you **run** a prompt file. You should see `code-review` listed among the available commands
+4. Select `/code-review` and run it
+
+> **`/` vs `#` — when to use which:**
+> - **`/`** *runs* something — a prompt file or a built-in command (e.g. `/code-review`, `/fix`, `/explain`). Prompt files are picked up from `.github/prompts/` **and** from the workspace root, so a `code-review.prompt.md` in either location shows up as `/code-review`. Use `/` when you want Copilot to **execute** a reusable instruction.
+> - **`#`** *adds context* — a specific file, folder, symbol, or tool you point Copilot at (e.g. `#file:app.py`, `#codebase`, `#selection`). Use `#` when you want Copilot to **consider** something without running it.
+>
+> In short: `/` = "do this", `#` = "look at this".
 
 ### Step 3: Compare with an ad-hoc prompt
 
