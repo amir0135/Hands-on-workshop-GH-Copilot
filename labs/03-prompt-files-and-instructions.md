@@ -5,6 +5,15 @@
 **Duration:** ~45 minutes
 **Goal:** Create reusable prompt files (`.prompt.md`) and scoped instruction files (`.instructions.md`) that your team can share, version, and refine together — turning tribal knowledge into something Copilot consistently applies.
 
+> **🧭 Jumping in cold?** This lab is fully standalone. Minimum setup: Copilot active in VS Code (see [Lab 0](00-getting-aligned.md#part-1-verify-your-setup-10-min)) and a `sandbox/` folder open as your workspace root (create one with `mkdir -p sandbox` if needed). [Lab 1](01-team-configuration.md) is helpful background but not required — every exercise below stands on its own.
+
+**Quick start:**
+
+```bash
+mkdir -p sandbox/.github/prompts sandbox/.github/instructions
+code sandbox     # open sandbox as the workspace root
+```
+
 > **🌱 Foundation path:** Exercises 1–3 — build and run your first prompt file, then a scoped instructions file. You'll leave with reusable workflows you can commit today.
 > **🚀 Advanced stretch:** Exercises 6–10 (Caveman Mode, skills, `lessons.md`, persistent memory, token budgeting) are the advanced track — dive straight in if prompt files are already familiar.
 
@@ -12,7 +21,7 @@
 
 ## Why Prompt Files Matter
 
-In Lab 1, you set up `copilot-instructions.md` — always-on, repo-wide guidance. That is the foundation.
+The most common always-on Copilot config is `copilot-instructions.md` — repo-wide guidance that's loaded into every chat ([Lab 1](01-team-configuration.md) covers it in depth). That is the foundation.
 
 **Prompt files** are different. They are **on-demand, task-specific workflows** you invoke when you need them. Think of them as:
 
@@ -186,7 +195,7 @@ Run each prompt file against this code and observe the different outputs:
 
 While prompt files are on-demand, `.instructions.md` files are **always-on for matching files**. Use them to embed domain knowledge into specific parts of your codebase.
 
-> **Where these files must live:** VS Code only auto-discovers `*.instructions.md` files inside the **`.github/instructions/`** folder at your workspace root (the `sandbox` folder — see Lab 1). The `applyTo` glob in each file decides **which files it activates for**, based on the path of the file you're editing — *not* on where the instructions file is stored. A bare `sandbox/.instructions.md` is **not** discovered, which is the #1 reason this exercise appears "not to work."
+> **Where these files must live:** VS Code only auto-discovers `*.instructions.md` files inside the **`.github/instructions/`** folder at your workspace root (the `sandbox` folder if you opened that as your workspace root — see [Lab 1](01-team-configuration.md#exercise-1-create-repository-level-instructions)). The `applyTo` glob in each file decides **which files it activates for**, based on the path of the file you're editing — *not* on where the instructions file is stored. A bare `sandbox/.instructions.md` is **not** discovered, which is the #1 reason this exercise appears "not to work."
 
 ### Step 1: Create scoped test instructions
 

@@ -5,6 +5,16 @@
 **Duration:** ~65 minutes
 **Goal:** Move beyond basic chat into agent mode — Copilot's most powerful interface for real development work. Learn when to use it, how to guide it, and how to think about it as a **junior developer on your team**.
 
+> **🧭 Jumping in cold?** This lab is fully standalone. Minimum setup: Copilot active in VS Code (see [Lab 0](00-getting-aligned.md#part-1-verify-your-setup-10-min)) and a `sandbox/` folder in this repo (create one with `mkdir -p sandbox` if needed). No prior lab artefacts required — if you skipped [Lab 1](01-team-configuration.md), Copilot will just use its default behaviour for the diff-review exercises.
+
+**Quick start:**
+
+```bash
+mkdir -p sandbox
+code sandbox     # open sandbox as the workspace root
+# then: Cmd/Ctrl+Shift+I to open Copilot Chat, switch to Agent mode
+```
+
 > **🌱 Foundation path:** Exercises 1–4 — run your first agent task, learn to review the diff, and practise turning vague prompts into sharp ones. This is the single most-used skill in the whole workshop.
 > **🚀 Advanced stretch:** Exercises 7–8 (model selection, multi-repo) plus the stretch section at the end. If agent mode is already routine for you, start there.
 
@@ -68,7 +78,7 @@ Watch how agent mode works:
 ### Step 4: Review the output
 
 Before accepting everything, ask yourself:
-- Does the code follow your instructions from Lab 1?
+- Does the code follow your team's coding standards (or your `copilot-instructions.md` if you have one — see [Lab 1](01-team-configuration.md))?
 - Is the error handling adequate?
 - Would you approve this in a pull request?
 
@@ -241,7 +251,7 @@ Agent mode uses context from your workspace to make better decisions. Learn to c
 
 ### Using `#file` and `#codebase`
 
-> **`#` adds context — it does not run anything.** Use `#` to *point Copilot at* a specific file, folder, symbol, or tool (e.g. `#file:app.py`, `#codebase`, `#selection`) so it considers that information. That's different from `/`, which **runs** a prompt file or command (e.g. `/code-review` — covered in Lab 3). Rule of thumb: `#` = "look at this", `/` = "do this".
+> **`#` adds context — it does not run anything.** Use `#` to *point Copilot at* a specific file, folder, symbol, or tool (e.g. `#file:app.py`, `#codebase`, `#selection`) so it considers that information. That's different from `/`, which **runs** a prompt file or command (e.g. `/code-review` — see [Lab 3](03-prompt-files-and-instructions.md)). Rule of thumb: `#` = "look at this", `/` = "do this".
 
 Try these:
 

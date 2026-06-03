@@ -5,6 +5,16 @@
 **Duration:** ~30 minutes
 **Goal:** Stop re-explaining yourself. Build **custom chat modes** that give Copilot a fixed persona, toolset, and rules for a recurring job — and learn to delegate self-contained work to **subagents** so your main conversation stays focused.
 
+> **🧭 Jumping in cold?** This lab is fully standalone. Minimum setup: Copilot active in VS Code (see [Lab 0](00-getting-aligned.md#part-1-verify-your-setup-10-min)) and a `sandbox/` folder in this repo. The review exercise asks for "any file" — open any source file in `sandbox/` (or any other folder); no prior lab artefacts required.
+
+**Quick start:**
+
+```bash
+mkdir -p sandbox/.github/chatmodes sandbox/.vscode
+code sandbox     # open sandbox as the workspace root
+# Exercise 1 will register .github/chatmodes/ in .vscode/settings.json
+```
+
 > **🌱 Foundation path:** Exercises 1–2 — create one custom chat mode and use it. Even one good mode (a strict reviewer, a docs writer) changes your daily workflow.
 > **🚀 Advanced stretch:** Exercises 3–4 plus the stretch section — toolset scoping, multi-mode workflows, and delegating to subagents.
 
@@ -68,7 +78,7 @@ For any code I show you or reference:
 
 1. Open the chat mode picker (where you pick Ask / Plan / Agent)
 2. Select **reviewer** (your new mode should appear)
-3. Open a file from an earlier lab and enter this prompt: `Review this.`
+3. Open any source file (one from a previous lab works, or any file in `sandbox/`) and enter this prompt: `Review this.`
 
 Notice it behaves differently from default agent mode: focused, opinionated, read-only.
 

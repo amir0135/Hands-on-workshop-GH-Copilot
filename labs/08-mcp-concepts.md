@@ -5,6 +5,8 @@
 **Duration:** ~25 minutes
 **Goal:** Understand what the Model Context Protocol (MCP) enables, when your team should consider adopting it, and what governance is needed — without installing or configuring anything.
 
+> **🧭 Jumping in cold?** This lab is fully standalone and requires no prior labs — it's conceptual, with no setup beyond having Copilot in VS Code.
+
 > **This lab is intentionally conceptual.** MCP requires security review, approval workflows, and infrastructure decisions that are beyond the scope of a hands-on workshop. The goal here is to give you the knowledge to have an informed conversation with your team about if and when to adopt MCP.
 
 > **🌱 Everyone:** read the concept and the without/with examples — this is shared vocabulary. **🚀 Advanced:** focus on the governance and "when to adopt" decisions; you've likely already seen MCP servers in your tool list.
@@ -86,7 +88,7 @@ MCP is powerful but introduces new considerations. Use this decision framework:
 
 ### Reasons to wait
 
-- Your team is still learning basic Copilot workflows (do Labs 1-5 first)
+- Your team is still finding its feet with the core Copilot workflows ([Labs 1–5](../README.md#agenda-09001530)) — nail those first; MCP amplifies good habits and bad ones
 - The MCP servers you need require security review or approval
 - You primarily need write operations (MCP is strongest for read workflows today)
 - The server you need doesn't exist yet or is in preview
@@ -94,8 +96,8 @@ MCP is powerful but introduces new considerations. Use this decision framework:
 ### Decision matrix
 
 ```
-Are you comfortable with Labs 1-5 patterns?
-  No → Focus on custom instructions, agent mode, prompt files first
+Are you comfortable with core Copilot patterns (instructions, agent mode, prompt files)?
+  No → Focus on those first; come back to MCP
   Yes ↓
 
 Does an MCP server exist for your use case?
@@ -140,7 +142,7 @@ Before adopting MCP, your team and organization should address:
 
 ## How MCP Connects to What You Learned Today
 
-Everything from Labs 1-5 works **independently** of MCP. MCP is an **additive capability** — it makes Copilot smarter by giving it access to real data, but the core practices don't change:
+Everything from the core labs works **independently** of MCP. MCP is an **additive capability** — it makes Copilot smarter by giving it access to real data, but the core practices don't change:
 
 | What you learned | Without MCP | With MCP |
 |-----------------|-------------|----------|

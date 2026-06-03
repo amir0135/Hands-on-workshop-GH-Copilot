@@ -5,6 +5,15 @@
 **Duration:** ~45 minutes
 **Goal:** Set up Copilot so it produces consistent, high-quality output that matches your team's standards — without every developer having to repeat the same instructions.
 
+> **🧭 Jumping in cold?** This lab is fully standalone. Minimum setup: Copilot active in VS Code (see [Lab 0](00-getting-aligned.md#part-1-verify-your-setup-10-min)) and this repo cloned. You'll create the `sandbox/` folder inside this lab — no prior lab artefacts required.
+
+**Quick start:**
+
+```bash
+mkdir -p sandbox/.github
+code sandbox     # open sandbox as the workspace root
+```
+
 > **🌱 Foundation path:** Exercises 1–2 — create a `copilot-instructions.md` and watch Copilot's behaviour change. That alone is a career-long skill.
 > **🚀 Advanced stretch:** Jump to the stretch section at the end for layered instructions, `applyTo` scoping, and measuring instruction effectiveness.
 
@@ -188,7 +197,7 @@ Finished the core exercises? Push further:
 4. **Instruction conflicts.** Deliberately add two contradicting rules and observe how Copilot resolves them. Learn where to be precise and where over-specifying backfires.
 5. **Onboarding angle.** Draft the 5 instructions that would most help a brand-new hire produce code that passes your review on day one. This is the highest-leverage list most teams never write down.
 
-> **Team-lead track:** Sketch the rollout plan — who owns the file, how changes are reviewed, and how you'll keep it from rotting. Capture it; you'll reference it in Lab 7.
+> **Team-lead track:** Sketch the rollout plan — who owns the file, how changes are reviewed, and how you'll keep it from rotting. Capture it; you'll want it for [Lab 7 (Capstone)](07-capstone.md) and for your real team rollout.
 
 ---
 

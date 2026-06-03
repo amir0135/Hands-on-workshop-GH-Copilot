@@ -5,6 +5,15 @@
 **Duration:** ~15 min kickoff in-session, then self-paced / team build (45–90 min)
 **Goal:** Put the entire day together. In a small team (or solo), take a feature from idea to reviewed, tested, documented code — using your instructions, prompt files, custom modes, and the agentic loop. This is where the skills stop being exercises and become *how you work*.
 
+> **🧭 Jumping in cold?** The capstone is the one lab that explicitly draws on earlier work. You can still do it standalone — wherever the checklist references Labs 1, 3, 4, or 9, just do that step from scratch inline (e.g. "create a `copilot-instructions.md` now" instead of "use the one from Lab 1"). Expect the build to take a bit longer the first time.
+
+**Quick start:**
+
+```bash
+mkdir -p sandbox/specs sandbox/.github/prompts sandbox/.github/chatmodes
+code sandbox     # open sandbox as the workspace root
+```
+
 > **Everyone participates.** 🌱 Newcomers own the spec, tests, and review checklist — high-value, no deep coding required. 🚀 Advanced users drive the agentic build and the custom modes. Mixed teams produce the best results.
 
 ---
@@ -54,16 +63,16 @@ Bring a genuine small feature or bug from your actual project. Often the most va
 
 Work the agentic loop deliberately. Tick these off as you go:
 
-- [ ] **Spec first** (Lab 4) — write a short spec in `sandbox/specs/` before any code
-- [ ] **Refine requirements** (Lab 4 Ex. 5) — have Copilot interview you / poke holes in the spec
-- [ ] **Instructions active** (Lab 1) — your `copilot-instructions.md` is in place and shaping output
-- [ ] **Diagram the design** (Lab 4 Ex. 6) — a quick Mermaid sequence or flow diagram, reviewed before coding
-- [ ] **Build incrementally** (Lab 2, 4) — small agent steps, review every diff like a PR
-- [ ] **Tests that verify behaviour** (Lab 5) — not just "no exception thrown"
-- [ ] **Run a review pass** (Lab 5 / Lab 9) — use your `code-review.prompt.md` or **reviewer** chat mode
-- [ ] **Debug honestly** (Lab 6) — when something breaks: Understand → Reproduce → Fix → Verify
-- [ ] **Document it** (Lab 9) — docs-writer mode or a docs prompt on the final result
-- [ ] **Capture a lesson** (Lab 3) — add one line to `lessons.md` about something that surprised you
+- [ ] **Spec first** ([Lab 4](04-agentic-workflows.md)) — write a short spec in `sandbox/specs/` before any code
+- [ ] **Refine requirements** ([Lab 4 Ex. 5](04-agentic-workflows.md#exercise-5-requirements--refinement-before-code)) — have Copilot interview you / poke holes in the spec
+- [ ] **Instructions active** ([Lab 1](01-team-configuration.md)) — your `copilot-instructions.md` is in place and shaping output
+- [ ] **Diagram the design** ([Lab 4 Ex. 6](04-agentic-workflows.md#exercise-6-architecture--diagrams-from-specs)) — a quick Mermaid sequence or flow diagram, reviewed before coding
+- [ ] **Build incrementally** ([Lab 2](02-agent-mode-mastery.md), [Lab 4](04-agentic-workflows.md)) — small agent steps, review every diff like a PR
+- [ ] **Tests that verify behaviour** ([Lab 5](05-quality-and-review.md)) — not just "no exception thrown"
+- [ ] **Run a review pass** ([Lab 5](05-quality-and-review.md) / [Lab 9](09-chat-modes-and-subagents.md)) — use your `code-review.prompt.md` or **reviewer** chat mode
+- [ ] **Debug honestly** ([Lab 6](06-debugging-and-legacy-code.md)) — when something breaks: Understand → Reproduce → Fix → Verify
+- [ ] **Document it** ([Lab 9](09-chat-modes-and-subagents.md)) — docs-writer mode or a docs prompt on the final result
+- [ ] **Capture a lesson** ([Lab 3](03-prompt-files-and-instructions.md)) — add one line to `lessons.md` about something that surprised you
 
 ---
 

@@ -4,6 +4,8 @@ A hands-on workshop that takes development teams from **everyday Copilot use to 
 
 > **Built for mixed rooms.** Whether this is your first week with Copilot or you've been driving agent mode for months, every lab has a **🌱 Foundation path** to get you grounded and a **🚀 Advanced stretch** to push you further. Nobody is bored; nobody is lost.
 
+> **🧭 Jump in anywhere.** The labs are designed to be **standalone** — each one opens with a *“Jumping in cold?”* checklist so you can drop into any lab without doing the previous ones. The agenda below is the suggested flow, not a hard prerequisite chain. Only [Lab 0](labs/00-getting-aligned.md) (setup) is genuinely required first, and the [Lab 7 capstone](labs/07-capstone.md) gets richer if you've done the labs it draws from.
+
 ---
 
 ## Workshop Goals
@@ -55,6 +57,8 @@ By the end of this workshop, participants will be able to:
 
 > **The core arc is Labs 0–7**, sized to fit the day. Labs 8–11 are bonus / self-paced — pick them up if your team moves fast or continue them after the session. Lab 11 is an advanced, terminal-focused deep dive for experienced users. The facilitator can flex the back half to the room's energy.
 
+> **Pick your own order.** Each lab stands on its own — see the *🧭 Jumping in cold?* block at the top of every lab for the minimum setup. Skip what you already know, double back to what you missed, or use this repo as a reference long after the workshop.
+
 ---
 
 ## How the Dual-Track Works
@@ -66,6 +70,29 @@ Every lab is split so the whole room moves together without holding anyone back:
 - **💬 Discussion points** — table conversations that work for any level and surface real-world tradeoffs.
 
 Look for these icons throughout the labs.
+
+---
+
+## 🧭 Jump-In Map — What Each Lab Actually Needs
+
+Each lab opens with a *“Jumping in cold?”* block, but here’s the whole picture at a glance. Only Lab 0 is a true prerequisite — everything else is independent, with inline fallbacks where prior-lab artefacts are referenced.
+
+| Lab | Hard prereqs | Nice-to-have first | Standalone? |
+|-----|--------------|--------------------|:-----------:|
+| [0 — Getting Aligned](labs/00-getting-aligned.md) | — | — | ✅ |
+| [1 — Team Configuration](labs/01-team-configuration.md) | Lab 0 setup | — | ✅ |
+| [2 — Agent Mode Mastery](labs/02-agent-mode-mastery.md) | Lab 0 setup | Lab 1 (better defaults) | ✅ |
+| [3 — Prompt Files & Instructions](labs/03-prompt-files-and-instructions.md) | Lab 0 setup | Lab 1 (context) | ✅ |
+| [4 — Agentic Feature Development](labs/04-agentic-workflows.md) | Lab 0 setup | Labs 1 & 3 (compound effect) | ✅ |
+| [5 — Quality Guardrails](labs/05-quality-and-review.md) | Lab 0 setup | Lab 3 (prompt files); Lab 4 (something to review) | ✅ |
+| [6 — Debugging & Legacy Code](labs/06-debugging-and-legacy-code.md) | Lab 0 setup + test runner | — | ✅ |
+| [7 — Capstone](labs/07-capstone.md) | Lab 0 setup | Labs 1, 3, 4, 5, 9 (the toolkit it pulls from) | ⚠️ Works solo, richer with the toolkit |
+| [8 — MCP Concepts](labs/08-mcp-concepts.md) | — (conceptual) | — | ✅ |
+| [9 — Chat Modes & Subagents](labs/09-chat-modes-and-subagents.md) | Lab 0 setup | — | ✅ |
+| [10 — Beyond the Editor](labs/10-advanced-topics.md) | Terminal + `gh` CLI | — | ✅ |
+| [11 — Copilot CLI Deep Dive](labs/11-copilot-cli.md) | Terminal + Node.js | Lab 10 §1 (gentler intro) | ✅ |
+
+> **Reading this for the first time?** The intended flow is top-to-bottom — that's how the day is paced. **Returning to a lab later?** Pick any row; the *Jumping in cold?* block tells you the 30-second setup.
 
 ---
 

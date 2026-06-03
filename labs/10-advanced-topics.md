@@ -5,6 +5,15 @@
 **Duration:** ~30 minutes (bonus / self-paced)
 **Goal:** Cover two topics that don't fit naturally in the main labs — using Copilot **outside the editor** (CLI), and the path from `your custom agent in VS Code` to a **deployed agent** in Copilot Studio or Microsoft Foundry.
 
+> **🧭 Jumping in cold?** This lab is fully standalone. Minimum setup: a terminal and (for Section 1) the [GitHub CLI](https://cli.github.com/). No prior lab artefacts required.
+
+**Quick start:**
+
+```bash
+gh --version                           # confirm GitHub CLI is installed and signed in
+gh extension install github/gh-copilot # Section 1
+```
+
 > Most participant questions from sign-up are now blended into Labs 1–9. This bonus lab handles the two that genuinely live outside the core flow.
 
 ---

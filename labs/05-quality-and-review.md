@@ -5,6 +5,15 @@
 **Duration:** ~45 minutes
 **Goal:** Establish patterns that prevent AI-generated code from becoming "instant legacy code." Learn how to use Copilot to catch problems, enforce standards, and maintain quality as teams adopt agent workflows.
 
+> **🧭 Jumping in cold?** This lab is standalone. Minimum setup: Copilot active in VS Code (see [Lab 0](00-getting-aligned.md#part-1-verify-your-setup-10-min)) and a `sandbox/` folder in this repo. Exercise 2 builds a prompt file — if you didn't do [Lab 3](03-prompt-files-and-instructions.md), this lab includes the create-from-scratch steps inline. Any code you generate during the lab works as the review target; no artefact from [Lab 4](04-agentic-workflows.md) required.
+
+**Quick start:**
+
+```bash
+mkdir -p sandbox/.github/prompts sandbox/registration
+code sandbox     # open sandbox as the workspace root
+```
+
 > **🌱 Foundation path:** Exercises 1–2 — practise the review-before-accept discipline and use Copilot to review Copilot. This habit is what separates teams that scale Copilot from teams that drown in AI debt.
 > **🚀 Advanced stretch:** Exercise 7 (test-automation track) plus the stretch section — build a reusable quality playbook for your team.
 
@@ -294,9 +303,9 @@ Review the following code changes as a senior team member would review a pull re
 - **Looks good:** Things done well (reinforce good patterns)
 ```
 
-### Step 2: Use it on your Lab 4 code
+### Step 2: Use it on some agent-generated code
 
-Run `/pr-review` against the code you built in Lab 4. 
+Run `/pr-review` against a recent piece of agent output. If you did [Lab 4](04-agentic-workflows.md), use the feature you built there. Otherwise, ask agent mode to scaffold any small module in `sandbox/` (e.g. a CSV parser, a simple REST handler) and review that.
 
 - How many "must fix" issues does it find?
 - Do you agree with the findings?

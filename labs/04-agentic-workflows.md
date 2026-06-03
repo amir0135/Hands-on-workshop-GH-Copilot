@@ -3,7 +3,16 @@
 > **Track:** Core workshop · 5 of 8
 
 **Duration:** ~60 minutes
-**Goal:** Build a complete feature end-to-end using agentic workflows — from specification to tested, working code. This is where everything from Labs 1-3 comes together.
+**Goal:** Build a complete feature end-to-end using agentic workflows — from specification to tested, working code. Custom instructions and prompt files (Labs 1 & 3) compound here if you have them, but this lab works without them.
+
+> **🧭 Jumping in cold?** This lab is standalone. Minimum setup: Copilot active in VS Code (see [Lab 0](00-getting-aligned.md#part-1-verify-your-setup-10-min)) and a `sandbox/` folder in this repo. If you skipped Labs 1 and 3, the agent will just rely on its defaults — the spec-driven loop still works. You'll get noticeably better output once you add a `copilot-instructions.md` ([Lab 1](01-team-configuration.md)) and prompt files ([Lab 3](03-prompt-files-and-instructions.md)).
+
+**Quick start:**
+
+```bash
+mkdir -p sandbox/specs
+code sandbox     # open sandbox as the workspace root
+```
 
 > **🌱 Foundation path:** Exercises 1–3 — write a short spec, hand it to the agent, and build the feature incrementally with review at each step. The spec-first habit is the whole point.
 > **🚀 Advanced stretch:** Exercises 6–7 (requirements refinement, architecture diagrams) plus the stretch section — great if you already build features with agent mode.
@@ -462,7 +471,7 @@ For those who finished the build and want a harder challenge:
 - **TDD works great** with agent mode — describe the tests, let the agent write them, then implement
 - **Working with existing code** is a strength — agent mode excels at refactoring, modernizing, and extending
 - **Your judgment is the quality gate** — agent mode is the accelerator, you are the quality control
-- **Everything from Labs 1-3 compounds here** — instructions, prompt files, and agent skills all contribute
+- **Instructions and prompt files compound here** — if you've done [Lab 1](01-team-configuration.md) and [Lab 3](03-prompt-files-and-instructions.md), the agent picks up your standards and reusable workflows automatically
 - **Refine requirements first** — half of "bad AI code" is correct code for a bad spec
 - **Diagrams from specs** — Mermaid / PlantUML / SysML all work; commit the source, not the rendered image
 

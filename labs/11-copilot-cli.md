@@ -5,6 +5,16 @@
 **Duration:** ~40 minutes (bonus / self-paced, advanced)
 **Goal:** Go beyond "ask the terminal a question." Drive real, multi-step work from the command line with the **GitHub Copilot CLI** — agentic edits, scripting, piping, MCP servers, custom instructions, and CI/automation — and know exactly when the terminal beats the editor.
 
+> **🧭 Jumping in cold?** This lab is fully standalone. Minimum setup: a terminal, Node.js, and a GitHub account with Copilot access. No prior lab artefacts required, though [Lab 10 §1](10-advanced-topics.md#section-1-github-copilot-cli) is a gentler intro if you've never used a Copilot CLI before.
+
+**Quick start:**
+
+```bash
+node --version                                    # need Node.js installed
+npm install -g @github/copilot                    # the standalone agentic CLI
+copilot --version                                 # then run `copilot` to start a session
+```
+
 > **This lab assumes you're comfortable already.** It's written for experienced users who live in the shell, script their workflows, and want Copilot where their hands already are. If you've never touched the CLI, skim [Lab 10 §1](10-advanced-topics.md#section-1-github-copilot-cli) first.
 >
 > **🌱 Foundation path:** Exercises 1–2 — install, and run your first agentic session.

@@ -5,6 +5,16 @@
 **Duration:** ~25 min in-session (core exercises); ~45 min for the full lab self-paced
 **Goal:** Use Copilot where it quietly delivers the most day-to-day value: fixing failing code and making sense of unfamiliar, undocumented, or legacy codebases. By the end you'll have a repeatable loop for "I didn't write this and it's broken."
 
+> **🧭 Jumping in cold?** This lab is fully standalone. Minimum setup: Copilot active in VS Code (see [Lab 0](00-getting-aligned.md#part-1-verify-your-setup-10-min)), a `sandbox/` folder in this repo, and your language's test runner installed. The Setup step below generates the buggy code you'll hunt — no prior lab artefacts required.
+
+**Quick start:**
+
+```bash
+mkdir -p sandbox/debugging
+code sandbox     # open sandbox as the workspace root
+# confirm your test runner works: pytest --version | npm test --help | dotnet test --help
+```
+
 > **🌱 Foundation path:** Exercises 1–3 — reproduce a bug, get Copilot to explain it, and fix it with a test that proves the fix. These are the everyday wins.
 > **🚀 Advanced stretch:** Exercises 4–5 plus the stretch section — characterization tests, safe refactoring of code with no tests, and onboarding-by-agent on a real repo.
 
