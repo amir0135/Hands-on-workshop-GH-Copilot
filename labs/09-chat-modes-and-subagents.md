@@ -28,6 +28,17 @@ Think of it this way: a prompt file is a *recipe*; a custom chat mode is a *spec
 
 Custom modes live in `.github/chatmodes/` as `*.chatmode.md` files with YAML frontmatter.
 
+> **⚠️ Heads-up — register the folder first:** VS Code only scans folders listed in the `chat.modeFilesLocations` setting. If your new mode **doesn't appear in the picker**, that's why — the folder isn't being watched. Add the `chatmodes` paths to `.vscode/settings.json`:
+>
+> ```jsonc
+> "chat.modeFilesLocations": {
+>   ".github/chatmodes": true,
+>   "playground/.github/chatmodes": true
+> }
+> ```
+>
+> (Newer VS Code builds renamed custom modes to **agents** and default to `.github/agents/*.agent.md`, which is already watched — that's why an `agents` folder "just works" but a fresh `chatmodes` folder may need registering.)
+
 ### Step 1: Create a "Strict Reviewer" mode
 
 Create `playground/.github/chatmodes/reviewer.chatmode.md`:
