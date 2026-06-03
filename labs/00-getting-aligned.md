@@ -177,7 +177,7 @@ Already comfortable with the three modes? Try these while the room catches up:
 
 1. **Compare modes on one task.** Ask the *same* question in Ask, Plan, and Agent mode: *"Add retry-with-backoff to the FizzBuzz runner and prove it works."* Note how each mode responds differently and when you'd reach for each.
 2. **Prompt quality experiment.** Run the warm-up twice: once with a one-line vague prompt, once with an explicit spec (inputs, edge cases, test count, language). Compare the diffs. This previews the core skill of Lab 2 and Lab 4.
-3. **Inspect the context.** In agent mode, ask: *"What files and context are you using to answer me right now?"* Get familiar with how the agent sees your workspace — you'll exploit this in every later lab.
+3. **Inspect the context.** In agent mode, enter this prompt: *"What files and context are you using to answer me right now?"* Get familiar with how the agent sees your workspace — you'll exploit this in every later lab.
 4. **Tooling tour.** Open the Copilot Chat overflow menu and find: the model picker, the mode picker, `#` context attachments, and `/` commands. You'll use all four today.
 
 > Capture one surprising observation. You'll share it at the next break.

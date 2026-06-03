@@ -55,7 +55,7 @@ For any code I show you or reference:
 
 1. Open the chat mode picker (where you pick Ask / Plan / Agent)
 2. Select **reviewer** (your new mode should appear)
-3. Open a file from an earlier lab and ask: `Review this.`
+3. Open a file from an earlier lab and enter this prompt: `Review this.`
 
 Notice it behaves differently from default agent mode: focused, opinionated, read-only.
 

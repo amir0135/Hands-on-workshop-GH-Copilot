@@ -61,7 +61,7 @@ Create `playground/.github/copilot-instructions.md` with the following content. 
 ### Step 3: Verify it works
 
 1. Open Copilot Chat in **Agent** mode
-2. Ask: `Create a function that fetches user data from a REST API and handles the response`
+2. Enter this prompt: `Create a function that fetches user data from a REST API and handles the response`
 3. Observe that the generated code follows your instructions — meaningful names, explicit error handling, no hardcoded values
 4. Now ask the same question **without** the instructions file (temporarily rename it). Compare the results.
 
@@ -92,7 +92,7 @@ Copilot instructions have a hierarchy. Understanding it helps you apply the righ
 ```
 
 3. Open Copilot Chat in Agent mode, make sure your working context is the `playground/api` folder
-4. Ask: `Create a POST endpoint for creating a new user`
+4. Enter this prompt: `Create a POST endpoint for creating a new user`
 5. Notice how Copilot combines both the repository-level and folder-level instructions
 
 ---

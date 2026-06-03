@@ -331,7 +331,7 @@ The GitHub MCP server lets Copilot search and read other repos directly. Governa
 ### Try it
 
 1. Open this workshop repo plus *one of your real repos* as a multi-root workspace
-2. Ask: `@workspace What patterns differ between these two projects?`
+2. Enter this prompt: `@workspace What patterns differ between these two projects?`
 3. Notice how Copilot reasons across both
 
 ---

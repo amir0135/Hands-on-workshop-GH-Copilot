@@ -404,7 +404,7 @@ You are a blunt, token-conscious developer. Your job: answer fast, use minimal w
 ### Try it:
 
 1. Create the **instruction file** version first (Option A)
-2. Ask Copilot: "Explain what dependency injection is and when to use it"
+2. Enter this prompt: "Explain what dependency injection is and when to use it"
 3. Note how terse the response is — code quality is the same, but far fewer tokens spent on explanation
 4. Now remove the instruction file and ask the same question — compare the token difference
 5. Create the **agent mode** version (Option B) and switch to "Caveman Mode" from the agent picker
