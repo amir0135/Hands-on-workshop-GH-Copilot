@@ -1,4 +1,6 @@
-# Lab 8: Debugging & Taming Legacy Code
+# Lab 6: Debugging & Taming Legacy Code
+
+> **Track:** Core workshop · 7 of 8
 
 **Duration:** ~25 min in-session (core exercises); ~45 min for the full lab self-paced
 **Goal:** Use Copilot where it quietly delivers the most day-to-day value: fixing failing code and making sense of unfamiliar, undocumented, or legacy codebases. By the end you'll have a repeatable loop for "I didn't write this and it's broken."
@@ -27,7 +29,7 @@ The risk is the same as everywhere else: it will confidently guess. Your job is 
 We need something broken. In **Agent** mode, generate a small program *with a deliberate, subtle bug* so everyone has a realistic target.
 
 ```
-In playground/debugging, create a small [your language] module that:
+In sandbox/debugging, create a small [your language] module that:
 - Parses a list of order records (id, quantity, unit_price)
 - Computes the total per order and a grand total
 - Applies a 10% discount only when an order's total exceeds 100
@@ -105,7 +107,7 @@ Real bugs usually arrive as an error message. Practise feeding raw signal to Cop
 ### Step 1: Generate a runtime error
 
 ```
-Add a function to playground/debugging that loads order data from a JSON string,
+Add a function to sandbox/debugging that loads order data from a JSON string,
 but make it crash with a realistic runtime error on malformed input
 (e.g. a missing field). Show me the error/stack trace.
 ```
@@ -213,4 +215,6 @@ If a characterization test breaks, you changed behaviour. Decide deliberately: w
 
 ---
 
-**Next:** [Lab 9: Custom Chat Modes & Subagents →](09-chat-modes-and-subagents.md)
+**Previous:** [Lab 5: Quality Guardrails ←](05-quality-and-review.md) · **Next:** [Lab 7: Capstone Team Challenge →](07-capstone.md)
+
+**Bonus / self-paced:** [Lab 8: MCP →](08-mcp-concepts.md) · [Lab 9: Custom Chat Modes & Subagents →](09-chat-modes-and-subagents.md) · [Lab 10: Beyond the Editor →](10-advanced-topics.md) · [Lab 11: Copilot CLI Deep Dive →](11-copilot-cli.md)

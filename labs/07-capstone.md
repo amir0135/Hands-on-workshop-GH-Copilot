@@ -1,4 +1,6 @@
-# Lab 10: Capstone — Build & Ship a Feature as a Team
+# Lab 7: Capstone — Build & Ship a Feature as a Team
+
+> **Track:** Core workshop · 8 of 8 — capstone
 
 **Duration:** ~15 min kickoff in-session, then self-paced / team build (45–90 min)
 **Goal:** Put the entire day together. In a small team (or solo), take a feature from idea to reviewed, tested, documented code — using your instructions, prompt files, custom modes, and the agentic loop. This is where the skills stop being exercises and become *how you work*.
@@ -52,14 +54,14 @@ Bring a genuine small feature or bug from your actual project. Often the most va
 
 Work the agentic loop deliberately. Tick these off as you go:
 
-- [ ] **Spec first** (Lab 4) — write a short spec in `playground/specs/` before any code
-- [ ] **Refine requirements** (Lab 4 Ex. 6) — have Copilot interview you / poke holes in the spec
+- [ ] **Spec first** (Lab 4) — write a short spec in `sandbox/specs/` before any code
+- [ ] **Refine requirements** (Lab 4 Ex. 5) — have Copilot interview you / poke holes in the spec
 - [ ] **Instructions active** (Lab 1) — your `copilot-instructions.md` is in place and shaping output
-- [ ] **Diagram the design** (Lab 4 Ex. 7) — a quick Mermaid sequence or flow diagram, reviewed before coding
+- [ ] **Diagram the design** (Lab 4 Ex. 6) — a quick Mermaid sequence or flow diagram, reviewed before coding
 - [ ] **Build incrementally** (Lab 2, 4) — small agent steps, review every diff like a PR
 - [ ] **Tests that verify behaviour** (Lab 5) — not just "no exception thrown"
 - [ ] **Run a review pass** (Lab 5 / Lab 9) — use your `code-review.prompt.md` or **reviewer** chat mode
-- [ ] **Debug honestly** (Lab 8) — when something breaks: Understand → Reproduce → Fix → Verify
+- [ ] **Debug honestly** (Lab 6) — when something breaks: Understand → Reproduce → Fix → Verify
 - [ ] **Document it** (Lab 9) — docs-writer mode or a docs prompt on the final result
 - [ ] **Capture a lesson** (Lab 3) — add one line to `lessons.md` about something that surprised you
 
@@ -141,6 +143,6 @@ As a whole room:
 
 ---
 
-**Bonus / self-paced:** [Lab 7: Beyond the Editor →](07-advanced-topics.md) — Copilot CLI and the bridge to Copilot Studio / Microsoft Foundry
+**Previous:** [Lab 6: Debugging & Taming Legacy Code ←](06-debugging-and-legacy-code.md) · **Back to:** [Workshop README →](../README.md)
 
-**Back to:** [Workshop README →](../README.md)
+**Bonus / self-paced:** [Lab 8: MCP →](08-mcp-concepts.md) · [Lab 9: Custom Chat Modes & Subagents →](09-chat-modes-and-subagents.md) · [Lab 10: Beyond the Editor →](10-advanced-topics.md) · [Lab 11: Copilot CLI Deep Dive →](11-copilot-cli.md)

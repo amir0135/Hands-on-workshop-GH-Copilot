@@ -1,5 +1,7 @@
 # Lab 4: Agentic Feature Development
 
+> **Track:** Core workshop · 5 of 8
+
 **Duration:** ~60 minutes
 **Goal:** Build a complete feature end-to-end using agentic workflows — from specification to tested, working code. This is where everything from Labs 1-3 comes together.
 
@@ -26,7 +28,7 @@ Instead of jumping straight to code, start with a specification. This dramatical
 
 ### Step 1: Write a feature spec
 
-Create `playground/specs/notification-service.md`:
+Create `sandbox/specs/notification-service.md`:
 
 ```markdown
 # Feature: Notification Service
@@ -65,7 +67,7 @@ Used by other services to notify users about events (order updates, system alert
 In Copilot Chat (Agent mode):
 
 ```
-Read the spec at #file:playground/specs/notification-service.md and implement it.
+Read the spec at #file:sandbox/specs/notification-service.md and implement it.
 
 Use [your language/framework]. Follow the project instructions.
 
@@ -93,7 +95,7 @@ TDD with Copilot follows a modified flow: you describe the test, Copilot writes 
 ### Step 1: Start with tests
 
 ```
-Using the notification service spec at #file:playground/specs/notification-service.md, 
+Using the notification service spec at #file:sandbox/specs/notification-service.md, 
 write tests FIRST — before the implementation.
 
 Write tests for:
@@ -145,7 +147,7 @@ Real development is never single-prompt. This exercise practices the iterative l
 ### Step 1: Start with a simple version
 
 ```
-Create a simple task queue in playground/task-queue/ that:
+Create a simple task queue in sandbox/task-queue/ that:
 - Accepts tasks with a name and priority (1-5)
 - Processes tasks in priority order (highest first)
 - Returns the next task to process
@@ -207,7 +209,7 @@ Agent mode is not just for greenfield. It is equally powerful for modifying exis
 
 ### Step 1: Create some "legacy" code
 
-Create `playground/legacy/order_processor.py` (or equivalent in your language) with this intentionally messy but functional code:
+Create `sandbox/legacy/order_processor.py` (or equivalent in your language) with this intentionally messy but functional code:
 
 ```python
 import json
@@ -252,7 +254,7 @@ def find(id):
 ### Step 2: Use agent mode to modernize
 
 ```
-Refactor #file:playground/legacy/order_processor.py with these goals:
+Refactor #file:sandbox/legacy/order_processor.py with these goals:
 1. Rename functions and variables to be descriptive
 2. Extract the discount logic into a separate, testable function
 3. Add proper input validation with clear error messages
@@ -306,7 +308,7 @@ For each slice, list: scope, what's deliberately out of scope, smallest demo.
 ### "What am I missing?" review
 
 ```
-Here is the spec: #file:playground/specs/notification-service.md
+Here is the spec: #file:sandbox/specs/notification-service.md
 
 Act as a senior engineer reviewing this spec. Identify:
 1. Missing non-functional requirements (perf, security, observability)
@@ -321,8 +323,8 @@ Be ruthless. Don't be polite.
 ### Traceability
 
 ```
-For each acceptance criterion in #file:playground/specs/notification-service.md,
-list the corresponding test in #file:playground/tests/.
+For each acceptance criterion in #file:sandbox/specs/notification-service.md,
+list the corresponding test in #file:sandbox/tests/.
 Identify any criterion without a test, and any test without a criterion.
 ```
 
@@ -339,7 +341,7 @@ For architecture work, Copilot is genuinely good at diagram generation. The patt
 ### Mermaid (renders inline in VS Code, GitHub, Markdown)
 
 ```
-Generate a Mermaid sequence diagram for the user registration flow in #file:playground/registration.py.
+Generate a Mermaid sequence diagram for the user registration flow in #file:sandbox/registration.py.
 Show: client, API, validation layer, database, email service. Include error paths.
 ```
 
@@ -359,7 +361,7 @@ sequenceDiagram
 ### PlantUML
 
 ```
-Generate PlantUML for the deployment topology described in #file:playground/specs/notification-service.md.
+Generate PlantUML for the deployment topology described in #file:sandbox/specs/notification-service.md.
 Show all components, their network boundaries, and the protocols between them.
 ```
 
@@ -373,7 +375,7 @@ For systems engineers — Copilot can scaffold blocks, parts, and requirement tr
 Generate a SysML v2 model for the notification service. Define:
 - A 'NotificationRequest' part with attributes recipient, channel, priority
 - A 'NotificationService' block with required interfaces
-- Requirement IDs that trace to the spec at #file:playground/specs/notification-service.md
+- Requirement IDs that trace to the spec at #file:sandbox/specs/notification-service.md
 ```
 
 Tip: provide the agent with one good example of your team's SysML style first, then ask it to match.
@@ -403,7 +405,7 @@ Examples:
 
 ### Build it end-to-end:
 
-1. **Write a short spec** in `playground/specs/` (10-15 lines — purpose, requirements, constraints)
+1. **Write a short spec** in `sandbox/specs/` (10-15 lines — purpose, requirements, constraints)
 2. **Generate with agent mode** using the spec as context
 3. **Review and iterate** — redirect at least twice
 4. **Write tests** — either TDD or after implementation
@@ -440,7 +442,7 @@ For those who finished the build and want a harder challenge:
 4. **Cross-cutting concern.** Add structured logging or input-validation consistently across every endpoint via a single well-scoped prompt. Judge how consistently the agent applies a cross-cutting change.
 5. **Architecture-first.** Before coding, generate a Mermaid sequence diagram of the request flow (Exercise 6), review it, *then* generate code that matches the diagram. Compare against building code-first.
 
-> Keep your spec and result — it's a strong starting point for the Lab 10 capstone.
+> Keep your spec and result — it's a strong starting point for the Lab 7 capstone.
 
 ---
 
@@ -466,4 +468,4 @@ For those who finished the build and want a harder challenge:
 
 ---
 
-**Next:** [Lab 5: Quality Guardrails →](05-quality-and-review.md)
+**Previous:** [Lab 3: Prompt Files & Reusable Instructions ←](03-prompt-files-and-instructions.md) · **Next:** [Lab 5: Quality Guardrails →](05-quality-and-review.md)

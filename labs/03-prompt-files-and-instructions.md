@@ -1,5 +1,7 @@
 # Lab 3: Prompt Files & Reusable Instructions
 
+> **Track:** Core workshop · 4 of 8
+
 **Duration:** ~45 minutes
 **Goal:** Create reusable prompt files (`.prompt.md`) and scoped instruction files (`.instructions.md`) that your team can share, version, and refine together — turning tribal knowledge into something Copilot consistently applies.
 
@@ -31,7 +33,7 @@ In Lab 1, you set up `copilot-instructions.md` — always-on, repo-wide guidance
 
 ### Step 1: Create a prompt file
 
-Create `playground/.github/prompts/code-review.prompt.md`:
+Create `sandbox/.github/prompts/code-review.prompt.md`:
 
 ```markdown
 ---
@@ -57,7 +59,7 @@ If the code looks good, say so — don't invent issues.
 
 ### Step 2: Use the prompt file
 
-1. Open any code file in your `playground/` folder (use one from Lab 2, or create something new)
+1. Open any code file in your `sandbox/` folder (use one from Lab 2, or create something new)
 2. Open Copilot Chat in **Agent** mode
 3. In the chat box, type `/` — a list of available commands and prompt files appears. The filename becomes the command, so `code-review.prompt.md` shows up as `/code-review`
 4. Select `/code-review` from the list (or finish typing it), then press **Enter** to run it — Copilot reviews the file you opened in step 1
@@ -82,7 +84,7 @@ Create prompt files for common team workflows. Start with these three — then a
 
 ### Prompt: Refactor
 
-Create `playground/.github/prompts/refactor.prompt.md`:
+Create `sandbox/.github/prompts/refactor.prompt.md`:
 
 ```markdown
 ---
@@ -106,7 +108,7 @@ After refactoring:
 
 ### Prompt: Explain for onboarding
 
-Create `playground/.github/prompts/explain-code.prompt.md`:
+Create `sandbox/.github/prompts/explain-code.prompt.md`:
 
 ```markdown
 ---
@@ -127,7 +129,7 @@ Use simple language. Avoid jargon unless it is defined.
 
 ### Prompt: Write tests
 
-Create `playground/.github/prompts/write-tests.prompt.md`:
+Create `sandbox/.github/prompts/write-tests.prompt.md`:
 
 ```markdown
 ---
@@ -155,7 +157,7 @@ Follow these rules:
 Create a code file with some intentional issues and test each prompt file against it. For example:
 
 ```python
-# Create playground/user_service.py with deliberately imperfect code
+# Create sandbox/user_service.py with deliberately imperfect code
 def process(d):
     if d:
         if d.get("email"):
@@ -184,11 +186,11 @@ Run each prompt file against this code and observe the different outputs:
 
 While prompt files are on-demand, `.instructions.md` files are **always-on for matching files**. Use them to embed domain knowledge into specific parts of your codebase.
 
-> **Where these files must live:** VS Code only auto-discovers `*.instructions.md` files inside the **`.github/instructions/`** folder at your workspace root (the `playground` folder — see Lab 1). The `applyTo` glob in each file decides **which files it activates for**, based on the path of the file you're editing — *not* on where the instructions file is stored. A bare `playground/.instructions.md` is **not** discovered, which is the #1 reason this exercise appears "not to work."
+> **Where these files must live:** VS Code only auto-discovers `*.instructions.md` files inside the **`.github/instructions/`** folder at your workspace root (the `sandbox` folder — see Lab 1). The `applyTo` glob in each file decides **which files it activates for**, based on the path of the file you're editing — *not* on where the instructions file is stored. A bare `sandbox/.instructions.md` is **not** discovered, which is the #1 reason this exercise appears "not to work."
 
 ### Step 1: Create scoped test instructions
 
-Create `playground/.github/instructions/tests.instructions.md`:
+Create `sandbox/.github/instructions/tests.instructions.md`:
 
 ```markdown
 ---
@@ -207,7 +209,7 @@ When working with test files:
 
 ### Step 2: Create API-specific instructions
 
-Create `playground/.github/instructions/api.instructions.md`:
+Create `sandbox/.github/instructions/api.instructions.md`:
 
 ```markdown
 ---
@@ -226,11 +228,11 @@ When working in the API layer:
 
 ### Step 3: Test the scoping
 
-1. In Agent mode, ask Copilot to create a test file in `playground/` — give it a name that matches the glob, e.g. `playground/calculator.test.py`
+1. In Agent mode, ask Copilot to create a test file in `sandbox/` — give it a name that matches the glob, e.g. `sandbox/calculator.test.py`
 2. Verify it follows the test instructions automatically (arrange-act-assert, naming convention)
-3. Ask Copilot to create an API endpoint at a path under `api/`, e.g. `playground/api/users.py`
+3. Ask Copilot to create an API endpoint at a path under `api/`, e.g. `sandbox/api/users.py`
 4. Verify it follows the API instructions (response format, status codes, validation)
-5. Open an ordinary file that matches neither glob (e.g. `playground/hello.py`) and confirm **neither** set of rules activates
+5. Open an ordinary file that matches neither glob (e.g. `sandbox/hello.py`) and confirm **neither** set of rules activates
 
 The key point: **you did not have to mention these rules in your prompt**. They applied automatically based on whether the file you were editing matched each `applyTo` glob.
 
@@ -242,7 +244,7 @@ The key point: **you did not have to mention these rules in your prompt**. They 
 
 Prompt files can reference other files for context:
 
-Create `playground/.github/prompts/new-endpoint.prompt.md`:
+Create `sandbox/.github/prompts/new-endpoint.prompt.md`:
 
 ```markdown
 ---
@@ -269,7 +271,7 @@ The user will describe what the endpoint should do.
 
 The description and prompt body work together to make the file self-documenting:
 
-Create `playground/.github/prompts/fix-bug.prompt.md`:
+Create `sandbox/.github/prompts/fix-bug.prompt.md`:
 
 ```markdown
 ---
@@ -293,7 +295,7 @@ The user will describe the bug symptoms.
 Use the `fix-bug` prompt on intentionally broken code:
 
 ```python
-# playground/broken_calculator.py
+# sandbox/broken_calculator.py
 def divide(a, b):
     return a / b  # No zero check
 
@@ -326,7 +328,7 @@ Now think about your real project. What prompt files would save your team the mo
 ### Your turn:
 
 1. Choose **2-3 workflows** your team does repeatedly
-2. Create prompt files for them in `playground/.github/prompts/`
+2. Create prompt files for them in `sandbox/.github/prompts/`
 3. Test them against real-ish code
 4. Think about what you would commit to your actual team repository
 
@@ -340,7 +342,7 @@ This pattern comes from the [github/awesome-copilot](https://github.com/github/a
 
 ### Option A: Scoped instruction file (always-on)
 
-Create `playground/.github/instructions/caveman.instructions.md` (or add the body to your existing repo-level `playground/.github/copilot-instructions.md`):
+Create `sandbox/.github/instructions/caveman.instructions.md` (or add the body to your existing repo-level `sandbox/.github/copilot-instructions.md`):
 
 ```markdown
 ---
@@ -374,7 +376,7 @@ You answer fast, use minimal words, no fluff.
 
 ### Option B: Custom agent mode (on-demand)
 
-Create `playground/.github/agents/caveman-mode.agent.md`:
+Create `sandbox/.github/agents/caveman-mode.agent.md`:
 
 ```markdown
 ---
@@ -438,7 +440,7 @@ This is the same pattern Claude uses for skills, and it works just as well with 
 
 ### Create your first skill
 
-Create `playground/.github/skills/postgres-migration-helper/SKILL.md`:
+Create `sandbox/.github/skills/postgres-migration-helper/SKILL.md`:
 
 ```markdown
 ---
@@ -496,7 +498,7 @@ Every time you debug something painful, record one line so the agent doesn't rep
 
 ### Create the file
 
-Create `playground/.github/lessons.md`:
+Create `sandbox/.github/lessons.md`:
 
 ```markdown
 # Lessons Learned
@@ -587,9 +589,9 @@ If you've worked through the exercises and want to go further:
 3. **Author a real `SKILL.md`.** Package one genuine recurring workflow from your job (a deployment, a release checklist, a data migration) so it's discoverable and only loaded when relevant. Test that Copilot picks it up by name.
 4. **Seed `lessons.md` from a real bug.** Recall a gotcha that bit your team twice. Write the one-line lesson that would have prevented the second time. Verify the agent respects it.
 5. **Token budget challenge.** Take a verbose prompt you actually use and cut it by 50% using Caveman Mode and scoped context — without losing output quality. Measure before/after.
-6. **Governance design.** Draft how prompt files and skills get reviewed and merged in your repo (who approves, where they live, how they're versioned). Bring it to Lab 10.
+6. **Governance design.** Draft how prompt files and skills get reviewed and merged in your repo (who approves, where they live, how they're versioned). Bring it to Lab 7.
 
-> Commit at least one new prompt file or skill to your `playground/` — you may reuse it in the capstone.
+> Commit at least one new prompt file or skill to your `sandbox/` — you may reuse it in the capstone.
 
 ---
 
@@ -617,4 +619,4 @@ If you've worked through the exercises and want to go further:
 
 ---
 
-**Next:** [Lab 4: Agentic Feature Development →](04-agentic-workflows.md)
+**Previous:** [Lab 2: Agent Mode Mastery ←](02-agent-mode-mastery.md) · **Next:** [Lab 4: Agentic Feature Development →](04-agentic-workflows.md)

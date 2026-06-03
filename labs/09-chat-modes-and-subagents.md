@@ -1,5 +1,7 @@
 # Lab 9: Custom Chat Modes & Subagents
 
+> **Track:** Bonus / self-paced
+
 **Duration:** ~30 minutes
 **Goal:** Stop re-explaining yourself. Build **custom chat modes** that give Copilot a fixed persona, toolset, and rules for a recurring job — and learn to delegate self-contained work to **subagents** so your main conversation stays focused.
 
@@ -33,7 +35,7 @@ Custom modes live in `.github/chatmodes/` as `*.chatmode.md` files with YAML fro
 > ```jsonc
 > "chat.modeFilesLocations": {
 >   ".github/chatmodes": true,
->   "playground/.github/chatmodes": true
+>   "sandbox/.github/chatmodes": true
 > }
 > ```
 >
@@ -41,7 +43,7 @@ Custom modes live in `.github/chatmodes/` as `*.chatmode.md` files with YAML fro
 
 ### Step 1: Create a "Strict Reviewer" mode
 
-Create `playground/.github/chatmodes/reviewer.chatmode.md`:
+Create `sandbox/.github/chatmodes/reviewer.chatmode.md`:
 
 ```markdown
 ---
@@ -78,12 +80,12 @@ Notice it behaves differently from default agent mode: focused, opinionated, rea
 
 Modes shine when each one does *one* job well.
 
-Create `playground/.github/chatmodes/docs-writer.chatmode.md`:
+Create `sandbox/.github/chatmodes/docs-writer.chatmode.md`:
 
 ```markdown
 ---
 description: "Writes clear docs and docstrings, never changes logic"
-tools: ['codebase', 'search']
+tools: ['codebase', 'search', 'editFiles']
 ---
 
 You write documentation only. Never change code logic.
@@ -96,6 +98,8 @@ When asked to document code:
 - Do not add comments that merely restate the code
 ```
 
+> **Why this mode includes an edit tool:** unlike the read-only `reviewer`, the docs-writer's job is to *write* docstrings and comments into files — so it needs `editFiles`. The instruction "Never change code logic" keeps it in its lane behaviourally, while the toolset still lets it do its actual job. This is the key trade-off: scope tools to what the role *must do*, not just what's safest.
+
 Switch into **docs-writer** and point it at an undocumented function. Compare the result to asking default agent mode "add docs" — the dedicated mode stays in its lane.
 
 ---
@@ -104,7 +108,7 @@ Switch into **docs-writer** and point it at an undocumented function. Compare th
 
 The real power is chaining specialists.
 
-Try this sequence on a small feature in your `playground/`:
+Try this sequence on a small feature in your `sandbox/`:
 
 1. **Plan** mode → outline the change
 2. **Agent** mode → implement it
@@ -128,7 +132,7 @@ When a task is **self-contained** — research, a focused investigation, a conta
 ### Try it (in agent mode)
 
 ```
-Delegate this to a subagent: explore the playground folder, list every file
+Delegate this to a subagent: explore the sandbox folder, list every file
 that defines a public function, and report back a single summary table of
 file → functions. Don't make any edits.
 ```
@@ -171,4 +175,6 @@ Watch how the subagent does the legwork and returns a digest, instead of floodin
 
 ---
 
-**Next:** [Lab 6: MCP — What's Next →](06-mcp-concepts.md)
+**See also (bonus / self-paced):** [Lab 8: MCP →](08-mcp-concepts.md) · [Lab 10: Beyond the Editor →](10-advanced-topics.md) · [Lab 11: Copilot CLI Deep Dive →](11-copilot-cli.md)
+
+**Back to:** [Workshop README →](../README.md)

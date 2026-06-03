@@ -1,4 +1,6 @@
-# Lab 6: MCP — What's Next (Conceptual)
+# Lab 8: MCP — What's Next (Conceptual)
+
+> **Track:** Bonus / self-paced
 
 **Duration:** ~25 minutes
 **Goal:** Understand what the Model Context Protocol (MCP) enables, when your team should consider adopting it, and what governance is needed — without installing or configuring anything.
@@ -212,6 +214,6 @@ If your team wants to explore MCP after this workshop:
 
 ---
 
-**Next:** [Lab 10: Capstone Team Challenge →](10-capstone.md)
+**See also (bonus / self-paced):** [Lab 9: Custom Chat Modes & Subagents →](09-chat-modes-and-subagents.md) · [Lab 10: Beyond the Editor →](10-advanced-topics.md) · [Lab 11: Copilot CLI Deep Dive →](11-copilot-cli.md)
 
-**Bonus / self-paced:** [Lab 7: Beyond the Editor →](07-advanced-topics.md) — Copilot CLI and the bridge to Copilot Studio / Microsoft Foundry
+**Back to:** [Workshop README →](../README.md)

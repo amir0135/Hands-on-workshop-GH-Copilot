@@ -1,5 +1,7 @@
 # Lab 1: Team Configuration & Custom Instructions
 
+> **Track:** Core workshop · 2 of 8
+
 **Duration:** ~45 minutes
 **Goal:** Set up Copilot so it produces consistent, high-quality output that matches your team's standards — without every developer having to repeat the same instructions.
 
@@ -20,17 +22,17 @@ The `.github/copilot-instructions.md` file tells Copilot how to behave for **eve
 
 ### Step 1: Create the file
 
-Create a folder called `playground` inside this repository. This is where you will do all your lab exercises.
+Create a folder called `sandbox` inside this repository. This is where you will do all your lab exercises.
 
 ```bash
-mkdir -p playground/.github
+mkdir -p sandbox/.github
 ```
 
-> **⚠️ Open `playground` as your workspace root.** Copilot only auto-discovers `.github/copilot-instructions.md` relative to the folder open as your workspace root. So open the **`playground` folder itself** in VS Code (**File → Open Folder…**, or **Add Folder to Workspace…**). Throughout this lab, "workspace root" = the `playground` folder, so `playground/.github/copilot-instructions.md` is discovered as `.github/copilot-instructions.md`.
+> **⚠️ Open `sandbox` as your workspace root.** Copilot only auto-discovers `.github/copilot-instructions.md` relative to the folder open as your workspace root. So open the **`sandbox` folder itself** in VS Code (**File → Open Folder…**, or **Add Folder to Workspace…**). Throughout this lab, "workspace root" = the `sandbox` folder, so `sandbox/.github/copilot-instructions.md` is discovered as `.github/copilot-instructions.md`.
 
 ### Step 2: Write your first instructions file
 
-Create `playground/.github/copilot-instructions.md` with the following content. **Read each section carefully** — these are the types of instructions that matter most for team consistency:
+Create `sandbox/.github/copilot-instructions.md` with the following content. **Read each section carefully** — these are the types of instructions that matter most for team consistency:
 
 ```markdown
 # Copilot Instructions
@@ -85,8 +87,8 @@ Copilot instructions have a hierarchy. Understanding it helps you apply the righ
 
 ### Try it:
 
-1. Create the scoped-instructions folder: `mkdir -p playground/.github/instructions`
-2. Create `playground/.github/instructions/api.instructions.md` with:
+1. Create the scoped-instructions folder: `mkdir -p sandbox/.github/instructions`
+2. Create `sandbox/.github/instructions/api.instructions.md` with:
 
 ```markdown
 ---
@@ -99,7 +101,7 @@ applyTo: "api/**"
 - All endpoints must validate input before processing
 ```
 
-3. Create a file under the path the glob targets, e.g. `playground/api/users.py` (so the workspace-relative path is `api/users.py`)
+3. Create a file under the path the glob targets, e.g. `sandbox/api/users.py` (so the workspace-relative path is `api/users.py`)
 4. With that file open, in Agent mode enter: `Create a POST endpoint for creating a new user`
 5. Notice how Copilot combines both the repository-level instructions **and** the scoped `api/**` instructions — automatically, because the file you're editing matches `applyTo`
 
@@ -111,7 +113,7 @@ Some Copilot behaviors are controlled by VS Code settings. Teams should align on
 
 ### Recommended team settings
 
-Create `playground/.vscode/settings.json`:
+Create `sandbox/.vscode/settings.json`:
 
 ```json
 {
@@ -143,7 +145,7 @@ Now apply what you learned to a **real** scenario. Think about your actual proje
 
 ### Write instructions for your team:
 
-1. Open `playground/.github/copilot-instructions.md`
+1. Open `sandbox/.github/copilot-instructions.md`
 2. Add sections relevant to **your** team's stack and standards:
 
 **Examples to consider:**
@@ -180,13 +182,13 @@ Now apply what you learned to a **real** scenario. Think about your actual proje
 
 Finished the core exercises? Push further:
 
-1. **Layer instructions with `applyTo`.** Create a scoped `playground/.github/instructions/tests.instructions.md` with `applyTo: "**/*.test.*,**/*_test.*"` that adds testing-only rules (e.g. "every test must assert behaviour, not just absence of errors"). Then open a file whose name matches (e.g. `playground/calculator.test.py`) and confirm the rules only activate for test files, not for ordinary source files.
+1. **Layer instructions with `applyTo`.** Create a scoped `sandbox/.github/instructions/tests.instructions.md` with `applyTo: "**/*.test.*,**/*_test.*"` that adds testing-only rules (e.g. "every test must assert behaviour, not just absence of errors"). Then open a file whose name matches (e.g. `sandbox/calculator.test.py`) and confirm the rules only activate for test files, not for ordinary source files.
 2. **Write a "house style" that's genuinely opinionated.** Encode a real, slightly controversial convention from your team (e.g. "no inheritance more than one level deep", "functions over 30 lines must be justified in a comment"). Generate code and see if Copilot honours it.
 3. **Measure effectiveness.** Generate the same feature *with* and *without* your instructions file (rename it temporarily). Diff the two outputs. Quantify what the instructions actually changed — this is the evidence you'll use to sell adoption to your team.
 4. **Instruction conflicts.** Deliberately add two contradicting rules and observe how Copilot resolves them. Learn where to be precise and where over-specifying backfires.
 5. **Onboarding angle.** Draft the 5 instructions that would most help a brand-new hire produce code that passes your review on day one. This is the highest-leverage list most teams never write down.
 
-> **Team-lead track:** Sketch the rollout plan — who owns the file, how changes are reviewed, and how you'll keep it from rotting. Capture it; you'll reference it in Lab 10.
+> **Team-lead track:** Sketch the rollout plan — who owns the file, how changes are reviewed, and how you'll keep it from rotting. Capture it; you'll reference it in Lab 7.
 
 ---
 
@@ -212,4 +214,4 @@ After completing the exercises, discuss with your table:
 
 ---
 
-**Next:** [Lab 2: Agent Mode Mastery →](02-agent-mode-mastery.md)
+**Previous:** [Lab 0: Getting Aligned ←](00-getting-aligned.md) · **Next:** [Lab 2: Agent Mode Mastery →](02-agent-mode-mastery.md)

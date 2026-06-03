@@ -1,5 +1,7 @@
 # Lab 2: Agent Mode Mastery
 
+> **Track:** Core workshop · 3 of 8
+
 **Duration:** ~65 minutes
 **Goal:** Move beyond basic chat into agent mode — Copilot's most powerful interface for real development work. Learn when to use it, how to guide it, and how to think about it as a **junior developer on your team**.
 
@@ -8,15 +10,17 @@
 
 ---
 
-## Agent Mode vs Ask vs Edit
+## Agent Mode vs Ask vs Plan
 
-Before diving in, understand the three Copilot Chat modes and when each is the right choice:
+Before diving in, understand the three Copilot Chat modes in the current VS Code picker and when each is the right choice:
 
 | Mode | What it does | Best for |
 |------|-------------|----------|
 | **Ask** | Answers questions, explains code | Understanding existing code, learning, quick questions |
-| **Edit** | Modifies specific files you point it to | Targeted changes to known files, refactoring a specific function |
+| **Plan** | Produces a step-by-step proposal *without* editing files | Thinking through an approach before handing it to Agent |
 | **Agent** | Autonomously plans and executes multi-step tasks across your workspace | Building features, creating new files, running commands, multi-file changes |
+
+> **Where did "Edit" mode go?** Earlier VS Code builds had a separate **Edit** mode for targeted single-file changes. Current builds fold that into **Agent** mode and show **Plan** in the picker instead — see [Lab 0](00-getting-aligned.md#part-2-know-your-copilot-modes-10-min). If you see "Edit mode" in older notes, treat it as **Agent**.
 
 **Agent mode** can:
 - Read and write multiple files
@@ -35,7 +39,7 @@ Before diving in, understand the three Copilot Chat modes and when each is the r
 
 1. Open Copilot Chat (`Ctrl+Shift+I` / `Cmd+Shift+I`)
 2. Switch to **Agent** mode (dropdown at the top of the chat panel)
-3. Make sure you are working in the `playground` folder
+3. Make sure you are working in the `sandbox` folder
 
 ### Step 2: Give agent mode a clear task
 
@@ -242,7 +246,7 @@ Agent mode uses context from your workspace to make better decisions. Learn to c
 Try these:
 
 ```
-Look at #file:playground/api/routes.py and add rate limiting to all endpoints.
+Look at #file:sandbox/api/routes.py and add rate limiting to all endpoints.
 ```
 
 ```
@@ -284,7 +288,7 @@ Copilot lets you choose the underlying model per chat (model selector at the bot
 
 ### Try it
 
-Run *the same* prompt in two different models on a piece of your playground code:
+Run *the same* prompt in two different models on a piece of your sandbox code:
 
 ```
 Review this file for security issues, performance, and maintainability. Be specific.
@@ -328,7 +332,7 @@ Keep `contracts/` updated via a small CI sync job.
 
 ### Pattern C: GitHub MCP (if approved)
 
-The GitHub MCP server lets Copilot search and read other repos directly. Governance considerations are covered in [Lab 6](06-mcp-concepts.md).
+The GitHub MCP server lets Copilot search and read other repos directly. Governance considerations are covered in [Lab 8](08-mcp-concepts.md).
 
 ### Try it
 
@@ -367,7 +371,7 @@ For people who already steer agent mode comfortably:
 
 ## Discussion Points
 
-1. **When would you NOT use agent mode?** (Quick lookups, simple renames, understanding code — use Ask or Edit instead)
+1. **When would you NOT use agent mode?** (Quick lookups, understanding code — use Ask; thinking through an approach first — use Plan)
 2. **How do you decide when to stop iterating** and just fix it yourself?
 3. **What's your strategy for reviewing agent output** before committing?
 4. **How would you onboard a new team member** to use agent mode effectively?
@@ -388,4 +392,4 @@ For people who already steer agent mode comfortably:
 
 ---
 
-**Next:** [Lab 3: Prompt Files & Reusable Instructions →](03-prompt-files-and-instructions.md)
+**Previous:** [Lab 1: Team Configuration ←](01-team-configuration.md) · **Next:** [Lab 3: Prompt Files & Reusable Instructions →](03-prompt-files-and-instructions.md)

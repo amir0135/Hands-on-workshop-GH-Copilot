@@ -1,5 +1,7 @@
 # Lab 0: Getting Aligned
 
+> **Track:** Core workshop · 1 of 8
+
 **Duration:** ~30 minutes
 **Goal:** Make sure everyone is set up, on the same page, and has a shared baseline before we start the hands-on labs.
 
@@ -87,7 +89,7 @@ Switch to **Agent** mode.
 
 First, a small targeted edit (this is what "Edit mode" used to do):
 
-1. Create a file `playground/hello.py` (or `.cs`, `.ts`, `.java` — your language) with a simple function:
+1. Create a file `sandbox/hello.py` (or `.cs`, `.ts`, `.java` — your language) with a simple function:
 
 ```python
 def greet(name):
@@ -103,7 +105,7 @@ Add type hints and handle the case where name is empty
 Then, a multi-file task that shows the full power of Agent mode:
 
 ```
-Create a playground/calculator file with add, subtract, multiply, and divide functions.
+Create a sandbox/calculator file with add, subtract, multiply, and divide functions.
 Include error handling for division by zero. Use [your language].
 ```
 
@@ -117,19 +119,19 @@ Include error handling for division by zero. Use [your language].
 
 Read through these ground rules so the workshop runs smoothly.
 
-### The playground folder
+### The sandbox folder
 
-All exercises use a `playground/` folder inside this repository. Create it now if it doesn't exist:
+All exercises use a `sandbox/` folder inside this repository. Create it now if it doesn't exist:
 
 ```bash
-mkdir -p playground
+mkdir -p sandbox
 ```
 
 This keeps your experiments organized and separate from the lab instructions.
 
-> **⚠️ Important — open `playground` as its own workspace.** Custom instruction files (`.github/copilot-instructions.md` and `.github/instructions/*.instructions.md`) are only auto-discovered **relative to the folder VS Code has open as the workspace root**. The labs put these files under `playground/.github/...`, so you must open the **`playground` folder itself** as your workspace, otherwise Copilot will never load them.
+> **⚠️ Important — open `sandbox` as its own workspace.** Custom instruction files (`.github/copilot-instructions.md` and `.github/instructions/*.instructions.md`) are only auto-discovered **relative to the folder VS Code has open as the workspace root**. The labs put these files under `sandbox/.github/...`, so you must open the **`sandbox` folder itself** as your workspace, otherwise Copilot will never load them.
 >
-> In VS Code: **File → Open Folder…** and select the `playground` folder (or **File → Add Folder to Workspace…** to keep the lab docs visible alongside it). For the rest of the workshop, "workspace root" means the `playground` folder.
+> In VS Code: **File → Open Folder…** and select the `sandbox` folder (or **File → Add Folder to Workspace…** to keep the lab docs visible alongside it). For the rest of the workshop, "workspace root" means the `sandbox` folder.
 
 ### Your language, your choice
 
@@ -150,7 +152,7 @@ If you are stuck for more than 5 minutes, ask your facilitator. The goal is lear
 
 ### Think about your real work
 
-Throughout the day, keep asking: *How would I use this on my actual project?* The most valuable output of this workshop is the custom instructions and prompt files you create for your team — not the playground code.
+Throughout the day, keep asking: *How would I use this on my actual project?* The most valuable output of this workshop is the custom instructions and prompt files you create for your team — not the sandbox code.
 
 ---
 
@@ -161,7 +163,7 @@ One final exercise to make sure Copilot is working end-to-end before we start th
 ### In Agent mode, try this:
 
 ```
-In the playground folder, create a simple "FizzBuzz" implementation in [your language]. 
+In the sandbox folder, create a simple "FizzBuzz" implementation in [your language]. 
 Then create a test file with at least 5 test cases covering normal numbers, 
 multiples of 3, multiples of 5, and multiples of 15. Run the tests.
 ```
@@ -192,10 +194,10 @@ Already comfortable with the three modes? Try these while the room catches up:
 
 Once your warm-up exercise is complete:
 
-1. Keep the `playground/` folder — you will use it for every lab
+1. Keep the `sandbox/` folder — you will use it for every lab
 2. Delete or keep the FizzBuzz files — they were just a setup check
 3. Move on to **[Lab 1: Team Configuration →](01-team-configuration.md)**
 
 ---
 
-**Next:** [Lab 1: Team Configuration →](01-team-configuration.md)
+**Previous:** [Workshop README ←](../README.md) · **Next:** [Lab 1: Team Configuration →](01-team-configuration.md)

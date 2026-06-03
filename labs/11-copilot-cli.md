@@ -1,9 +1,11 @@
 # Lab 11: Copilot in the Terminal — The CLI Deep Dive
 
+> **Track:** Bonus / self-paced (advanced)
+
 **Duration:** ~40 minutes (bonus / self-paced, advanced)
 **Goal:** Go beyond "ask the terminal a question." Drive real, multi-step work from the command line with the **GitHub Copilot CLI** — agentic edits, scripting, piping, MCP servers, custom instructions, and CI/automation — and know exactly when the terminal beats the editor.
 
-> **This lab assumes you're comfortable already.** It's written for experienced users who live in the shell, script their workflows, and want Copilot where their hands already are. If you've never touched the CLI, skim [Lab 7 §1](07-advanced-topics.md#section-1-github-copilot-cli) first.
+> **This lab assumes you're comfortable already.** It's written for experienced users who live in the shell, script their workflows, and want Copilot where their hands already are. If you've never touched the CLI, skim [Lab 10 §1](10-advanced-topics.md#section-1-github-copilot-cli) first.
 >
 > **🌱 Foundation path:** Exercises 1–2 — install, and run your first agentic session.
 > **🚀 Advanced stretch:** Exercises 3–9 — scripting, piping, MCP, custom instructions, CI, skill determinism, custom subagents, and context compaction.
@@ -152,7 +154,7 @@ This is the payoff of centralising standards: editor, CLI, and CI all read the s
 
 ## Exercise 5: MCP Servers in the CLI 🚀
 
-The CLI agent is an **MCP client** too (see [Lab 6](06-mcp-concepts.md) for concepts). You can give the terminal agent the same external tools — GitHub, a database, your own server.
+The CLI agent is an **MCP client** too (see [Lab 8](08-mcp-concepts.md) for concepts). You can give the terminal agent the same external tools — GitHub, a database, your own server.
 
 - Configure MCP servers via the CLI's config (use `/mcp` inside the session, or the MCP config file the CLI reads).
 - The same trust rules apply: **only connect servers you trust**, prefer read-only/scoped tokens, and remember MCP uses your existing auth — it's not a backdoor.
@@ -401,9 +403,11 @@ Then `aicommit` becomes muscle memory. Share useful ones with the team as snippe
 
 - [GitHub Copilot CLI docs](https://docs.github.com/en/copilot/github-copilot-in-the-cli)
 - [`gh copilot` extension](https://github.com/github/gh-copilot)
-- [Lab 6: MCP Concepts](06-mcp-concepts.md) — MCP fundamentals the CLI reuses
+- [Lab 8: MCP Concepts](08-mcp-concepts.md) — MCP fundamentals the CLI reuses
 - [Lab 1: Team Configuration](01-team-configuration.md) — the instructions the CLI honours
 
 ---
 
-**Back to:** [Lab 7: Beyond the Editor →](07-advanced-topics.md) · [Workshop README →](../README.md)
+**See also (bonus / self-paced):** [Lab 8: MCP →](08-mcp-concepts.md) · [Lab 9: Custom Chat Modes & Subagents →](09-chat-modes-and-subagents.md) · [Lab 10: Beyond the Editor →](10-advanced-topics.md)
+
+**Back to:** [Workshop README →](../README.md)

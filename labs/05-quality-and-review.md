@@ -1,5 +1,7 @@
 # Lab 5: Quality Guardrails
 
+> **Track:** Core workshop · 6 of 8
+
 **Duration:** ~45 minutes
 **Goal:** Establish patterns that prevent AI-generated code from becoming "instant legacy code." Learn how to use Copilot to catch problems, enforce standards, and maintain quality as teams adopt agent workflows.
 
@@ -32,7 +34,7 @@ In Agent mode, use a deliberately loose prompt:
 
 ```
 Create a user registration function that takes a username, email, and password,
-stores them, and returns the user. Put it in playground/registration.
+stores them, and returns the user. Put it in sandbox/registration.
 ```
 
 ### Step 2: Review the output critically
@@ -76,7 +78,7 @@ Copilot is excellent at catching problems in code — including code it generate
 
 ### Step 1: Create the security review prompt
 
-If you didn't do this in Lab 3, create `playground/.github/prompts/security-review.prompt.md`:
+If you didn't do this in Lab 3, create `sandbox/.github/prompts/security-review.prompt.md`:
 
 ```markdown
 ---
@@ -121,7 +123,7 @@ Set up custom instructions that prevent the most common quality issues before th
 
 ### Step 1: Create a quality-focused instructions file
 
-Create `playground/.github/instructions/quality-rules.instructions.md`:
+Create `sandbox/.github/instructions/quality-rules.instructions.md`:
 
 ```markdown
 ---
@@ -219,7 +221,7 @@ Each test should have one clear assertion that would fail if the behavior change
 
 ### Step 4: Create a test quality prompt
 
-Create `playground/.github/prompts/test-quality-check.prompt.md`:
+Create `sandbox/.github/prompts/test-quality-check.prompt.md`:
 
 ```markdown
 ---
@@ -250,7 +252,7 @@ Quality at scale requires consistency across the team, not just individual disci
 
 ### Step 1: Create a PR review prompt
 
-Create `playground/.github/prompts/pr-review.prompt.md`:
+Create `sandbox/.github/prompts/pr-review.prompt.md`:
 
 ```markdown
 ---
@@ -302,7 +304,7 @@ Run `/pr-review` against the code you built in Lab 4.
 
 ### Step 3: Create a consistency check prompt
 
-Create `playground/.github/prompts/consistency-check.prompt.md`:
+Create `sandbox/.github/prompts/consistency-check.prompt.md`:
 
 ```markdown
 ---
@@ -329,7 +331,7 @@ For each inconsistency:
 
 Bring it all together. Create a quality checklist your team can use daily.
 
-### Create `playground/.github/prompts/before-commit.prompt.md`:
+### Create `sandbox/.github/prompts/before-commit.prompt.md`:
 
 ```markdown
 ---
@@ -352,7 +354,7 @@ If all checks pass, confirm the code is ready to commit.
 
 ### Try it:
 
-Run `/before-commit` against your playground code. Fix any issues it finds. Run it again to confirm they're resolved.
+Run `/before-commit` against your sandbox code. Fix any issues it finds. Run it again to confirm they're resolved.
 
 ---
 
@@ -363,7 +365,7 @@ Not every workshop participant is a developer. If your day job is test automatio
 ### Generate a test plan from requirements
 
 ```
-Read #file:playground/specs/notification-service.md and produce a test plan:
+Read #file:sandbox/specs/notification-service.md and produce a test plan:
 - Equivalence classes for inputs
 - Boundary cases
 - Negative tests
@@ -425,13 +427,13 @@ Combine Exercise 4's `test-quality-check` prompt with this exercise's patterns t
 
 If you've internalised review-before-accept and want more:
 
-1. **Assemble a quality playbook.** Combine your security-review, quality-check, and consistency prompts into one `playground/.github/prompts/` set, plus a short README that says when to run each. This is a deliverable you can take to work.
+1. **Assemble a quality playbook.** Combine your security-review, quality-check, and consistency prompts into one `sandbox/.github/prompts/` set, plus a short README that says when to run each. This is a deliverable you can take to work.
 2. **CI-gate vs. PR-review.** Draft which checks belong in automated CI (lint, tests, secret scan) versus human PR review (design, naming, intent). Generate a sample GitHub Actions / pipeline snippet for the automatable half.
 3. **Adversarial review.** Ask the agent to *attack* a piece of its own generated code: "Find three ways this could be exploited or break in production." Compare with what your normal review would have caught.
 4. **Shallow-test detector.** Take an AI-generated test file and prompt the agent to flag tests that only assert "no exception thrown" and rewrite them to assert real behaviour. Measure the depth improvement.
 5. **Consistency audit.** Generate two similar files in separate sessions, then ask the agent to reconcile their patterns into one consistent style. This is the "minutes-apart inconsistency" problem from the intro, solved.
 
-> Save your quality playbook — it's a required input to the Lab 10 capstone scoring.
+> Save your quality playbook — it's a required input to the Lab 7 capstone scoring.
 
 ---
 
@@ -456,4 +458,4 @@ If you've internalised review-before-accept and want more:
 
 ---
 
-**Next:** [Lab 8: Debugging & Taming Legacy Code →](08-debugging-and-legacy-code.md)
+**Previous:** [Lab 4: Agentic Feature Development ←](04-agentic-workflows.md) · **Next:** [Lab 6: Debugging & Taming Legacy Code →](06-debugging-and-legacy-code.md)

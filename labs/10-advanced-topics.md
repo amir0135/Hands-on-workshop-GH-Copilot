@@ -1,4 +1,6 @@
-# Lab 7: Beyond the Editor — CLI & the Bridge to Studio / Foundry
+# Lab 10: Beyond the Editor — CLI & the Bridge to Studio / Foundry
+
+> **Track:** Bonus / self-paced
 
 **Duration:** ~30 minutes (bonus / self-paced)
 **Goal:** Cover two topics that don't fit naturally in the main labs — using Copilot **outside the editor** (CLI), and the path from `your custom agent in VS Code` to a **deployed agent** in Copilot Studio or Microsoft Foundry.
@@ -146,5 +148,7 @@ The earlier draft of this lab covered model selection, multi-repo work, skills/m
 - [github/awesome-copilot](https://github.com/github/awesome-copilot)
 
 ---
+
+**See also (bonus / self-paced):** [Lab 8: MCP →](08-mcp-concepts.md) · [Lab 9: Custom Chat Modes & Subagents →](09-chat-modes-and-subagents.md) · [Lab 11: Copilot CLI Deep Dive →](11-copilot-cli.md)
 
 **Back to:** [Workshop README →](../README.md)
