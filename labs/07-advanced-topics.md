@@ -48,6 +48,8 @@ Use the CLI for fast shell intent ("how do I rebase onto main?"), then drop into
 
 > **Note:** The standalone GitHub Copilot CLI binary (`copilot`) and the `gh copilot` extension are evolving fast. Check `gh copilot --help` and the [Copilot CLI docs](https://docs.github.com/en/copilot/github-copilot-in-the-cli) for current capabilities.
 
+> **Want more?** [Lab 11: Copilot in the Terminal — The CLI Deep Dive](11-copilot-cli.md) is the advanced, experienced-user track: agentic CLI sessions, scripting and piping, MCP in the terminal, custom instructions headless, and CI automation.
+
 ---
 
 ## Section 2: From VS Code → Copilot Studio / Microsoft Foundry
@@ -88,22 +90,25 @@ Does the agent need to run programmatically (API, scheduled, embedded in an app)
 
 ### Skills already in this workspace
 
-This workspace ships with skills that handle the migration end-to-end:
+This workspace ships with skills (and an agent) that handle the migration end-to-end:
 
-- **`microsoft-foundry-agent-framework-code-gen`** — scaffolds Foundry agent code from a description
+- **`vscode-microsoft-foundry`** — end-to-end workflow for developing Foundry agent apps: scaffold, build, add tools, choose a model, deploy, evaluate
 - **`microsoft-foundry`** — deploys, evaluates, and manages Foundry agents (Docker build, ACR push, batch eval, prompt optimization)
-- **`aitk-quick-start`** — AI Toolkit walkthrough for VS Code
+- **`AIAgentExpert`** (agent) — generates, debugs, evaluates, and deploys agents using the Microsoft Agent Framework
+- **`foundrytk-quick-start`** — Foundry Toolkit (formerly AI Toolkit / AITK) walkthrough for VS Code
 - **`microsoft-365-agents-toolkit`** — builds, tests, and deploys Microsoft 365 agents (Teams, Declarative Agents, Custom Engine Agents)
+
+> **Prerequisites for the deploy step:** the *scaffold* exercise below works with no setup. To actually **deploy** to Foundry you need: an Azure subscription with access to Azure AI Foundry, a Foundry project, the [Azure Developer CLI (`azd`)](https://aka.ms/azd) and `az` signed in (`az login`), and Docker running. Without these, stop after the scaffold step — the generated code is still the useful takeaway.
 
 ### Try it
 
 ```
-Use the microsoft-foundry-agent-framework-code-gen skill to scaffold a simple
-agent that answers questions about our product catalog.
+Use the vscode-microsoft-foundry skill to scaffold a simple agent that answers
+questions about our product catalog.
 Don't deploy yet — just generate the local code so I can review it.
 ```
 
-Then, when you're ready to deploy:
+Then, when you're ready to deploy (requires the prerequisites above):
 
 ```
 Use the microsoft-foundry skill to deploy the agent we scaffolded to my Foundry project.

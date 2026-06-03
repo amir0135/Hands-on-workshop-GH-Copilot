@@ -121,7 +121,7 @@ Set up custom instructions that prevent the most common quality issues before th
 
 ### Step 1: Create a quality-focused instructions file
 
-Create `playground/.github/quality-rules.instructions.md`:
+Create `playground/.github/instructions/quality-rules.instructions.md`:
 
 ```markdown
 ---

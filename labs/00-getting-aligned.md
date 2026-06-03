@@ -127,6 +127,10 @@ mkdir -p playground
 
 This keeps your experiments organized and separate from the lab instructions.
 
+> **⚠️ Important — open `playground` as its own workspace.** Custom instruction files (`.github/copilot-instructions.md` and `.github/instructions/*.instructions.md`) are only auto-discovered **relative to the folder VS Code has open as the workspace root**. The labs put these files under `playground/.github/...`, so you must open the **`playground` folder itself** as your workspace, otherwise Copilot will never load them.
+>
+> In VS Code: **File → Open Folder…** and select the `playground` folder (or **File → Add Folder to Workspace…** to keep the lab docs visible alongside it). For the rest of the workshop, "workspace root" means the `playground` folder.
+
 ### Your language, your choice
 
 Unless a lab specifies otherwise, use **the programming language you use at work**. The patterns are the same regardless of language. Pick one and stick with it for the day.

@@ -51,9 +51,9 @@ By the end of this workshop, participants will be able to:
 | 14:45–14:55 | ☕ Break | |
 | 14:55–15:20 | [Lab 8: Debugging & Legacy Code](labs/08-debugging-and-legacy-code.md) | Fix failing code, understand & modernize unfamiliar codebases |
 | 15:20–15:30 | [Lab 10: Capstone Kickoff](labs/10-capstone.md) + Wrap-up | Team challenge brief, Q&A, what to do Monday morning |
-| Bonus / self-paced | [Lab 6: MCP](labs/06-mcp-concepts.md) · [Lab 9: Chat Modes & Subagents](labs/09-chat-modes-and-subagents.md) · [Lab 7: Beyond the Editor](labs/07-advanced-topics.md) · [Lab 10 Capstone](labs/10-capstone.md) | MCP, custom modes, Copilot CLI, Studio / Foundry bridge, full team build |
+| Bonus / self-paced | [Lab 6: MCP](labs/06-mcp-concepts.md) · [Lab 9: Chat Modes & Subagents](labs/09-chat-modes-and-subagents.md) · [Lab 7: Beyond the Editor](labs/07-advanced-topics.md) · [Lab 11: Copilot CLI Deep Dive](labs/11-copilot-cli.md) · [Lab 10 Capstone](labs/10-capstone.md) | MCP, custom modes, Copilot CLI, Studio / Foundry bridge, full team build |
 
-> **The core arc is Labs 0–5 + 8**, sized to fit the day. Labs 6, 7, 9, and 10 are bonus/self-paced — pick them up if your team moves fast or continue them after the session. The facilitator can flex the back half to the room's energy.
+> **The core arc is Labs 0–5 + 8**, sized to fit the day. Labs 6, 7, 9, 10, and 11 are bonus/self-paced — pick them up if your team moves fast or continue them after the session. Lab 11 is an advanced, terminal-focused deep dive for experienced users. The facilitator can flex the back half to the room's energy.
 
 ---
 
@@ -92,7 +92,7 @@ Participants asked about specific topics during sign-up. They are blended into t
 | Custom chat modes & specialized agents | [Lab 9](labs/09-chat-modes-and-subagents.md) |
 | Delegating work to subagents | [Lab 9](labs/09-chat-modes-and-subagents.md) |
 | MCP integration & tools | [Lab 6](labs/06-mcp-concepts.md) |
-| Copilot CLI usage | [Lab 7 §1](labs/07-advanced-topics.md#section-1-github-copilot-cli) |
+| Copilot CLI usage | [Lab 7 §1](labs/07-advanced-topics.md#section-1-github-copilot-cli) (intro) · [Lab 11](labs/11-copilot-cli.md) (advanced deep dive) |
 | Bridge from VS Code → Copilot Studio / Microsoft Foundry | [Lab 7 §2](labs/07-advanced-topics.md#section-2-from-vs-code--copilot-studio--microsoft-foundry) |
 | Improving how you phrase a task / prompt | [Lab 2 Ex. 4](labs/02-agent-mode-mastery.md), [Lab 4](labs/04-agentic-workflows.md) |
 | Context-aware agents on legacy code | [Lab 1](labs/01-team-configuration.md), [Lab 8](labs/08-debugging-and-legacy-code.md) |

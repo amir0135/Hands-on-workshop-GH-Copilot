@@ -26,6 +26,8 @@ Create a folder called `playground` inside this repository. This is where you wi
 mkdir -p playground/.github
 ```
 
+> **⚠️ Open `playground` as your workspace root.** Copilot only auto-discovers `.github/copilot-instructions.md` relative to the folder open as your workspace root. So open the **`playground` folder itself** in VS Code (**File → Open Folder…**, or **Add Folder to Workspace…**). Throughout this lab, "workspace root" = the `playground` folder, so `playground/.github/copilot-instructions.md` is discovered as `.github/copilot-instructions.md`.
+
 ### Step 2: Write your first instructions file
 
 Create `playground/.github/copilot-instructions.md` with the following content. **Read each section carefully** — these are the types of instructions that matter most for team consistency:
@@ -76,24 +78,30 @@ Copilot instructions have a hierarchy. Understanding it helps you apply the righ
 | Scope | File | Who benefits | Use for |
 |-------|------|-------------|---------|
 | **Repository** | `.github/copilot-instructions.md` | Everyone on the project | Coding standards, architecture patterns, tech stack rules |
-| **Folder** | `.github/copilot-instructions.md` in any subfolder, or `.instructions.md` files | Anyone working in that area | Module-specific patterns (e.g., "this folder uses repository pattern") |
+| **Scoped (path-based)** | `.github/instructions/<name>.instructions.md` with an `applyTo` glob | Anyone editing matching files | Module-specific patterns (e.g. "files under `api/` use the repository pattern") |
 | **Personal** | VS Code user settings | Just you | Personal preferences (verbosity, language, editor habits) |
+
+> **How scoped instructions are discovered:** VS Code looks for `*.instructions.md` files in the **`.github/instructions/`** folder at your workspace root. Each file's `applyTo` frontmatter is a glob that decides **which files it activates for** — based on the path of the file you're editing, *not* which folder the instructions file sits in. A bare `.instructions.md` dropped into a random subfolder is **not** discovered.
 
 ### Try it:
 
-1. Create a subfolder in your playground: `mkdir -p playground/api`
-2. Create `playground/api/.instructions.md` with:
+1. Create the scoped-instructions folder: `mkdir -p playground/.github/instructions`
+2. Create `playground/.github/instructions/api.instructions.md` with:
 
 ```markdown
+---
+applyTo: "api/**"
+---
+
 # API Layer Instructions
 - All API endpoints must return consistent response envelopes: `{ data, error, status }`
 - Use middleware for authentication — do not check auth in individual handlers
 - All endpoints must validate input before processing
 ```
 
-3. Open Copilot Chat in Agent mode, make sure your working context is the `playground/api` folder
-4. Enter this prompt: `Create a POST endpoint for creating a new user`
-5. Notice how Copilot combines both the repository-level and folder-level instructions
+3. Create a file under the path the glob targets, e.g. `playground/api/users.py` (so the workspace-relative path is `api/users.py`)
+4. With that file open, in Agent mode enter: `Create a POST endpoint for creating a new user`
+5. Notice how Copilot combines both the repository-level instructions **and** the scoped `api/**` instructions — automatically, because the file you're editing matches `applyTo`
 
 ---
 
@@ -172,7 +180,7 @@ Now apply what you learned to a **real** scenario. Think about your actual proje
 
 Finished the core exercises? Push further:
 
-1. **Layer instructions with `applyTo`.** Create a scoped `.github/instructions/tests.instructions.md` with `applyTo: "**/*.test.*,**/*_test.*"` that adds testing-only rules (e.g. "every test must assert behaviour, not just absence of errors"). Confirm it only activates when you touch test files.
+1. **Layer instructions with `applyTo`.** Create a scoped `playground/.github/instructions/tests.instructions.md` with `applyTo: "**/*.test.*,**/*_test.*"` that adds testing-only rules (e.g. "every test must assert behaviour, not just absence of errors"). Then open a file whose name matches (e.g. `playground/calculator.test.py`) and confirm the rules only activate for test files, not for ordinary source files.
 2. **Write a "house style" that's genuinely opinionated.** Encode a real, slightly controversial convention from your team (e.g. "no inheritance more than one level deep", "functions over 30 lines must be justified in a comment"). Generate code and see if Copilot honours it.
 3. **Measure effectiveness.** Generate the same feature *with* and *without* your instructions file (rename it temporarily). Diff the two outputs. Quantify what the instructions actually changed — this is the evidence you'll use to sell adoption to your team.
 4. **Instruction conflicts.** Deliberately add two contradicting rules and observe how Copilot resolves them. Learn where to be precise and where over-specifying backfires.

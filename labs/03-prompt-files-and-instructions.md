@@ -184,9 +184,11 @@ Run each prompt file against this code and observe the different outputs:
 
 While prompt files are on-demand, `.instructions.md` files are **always-on for matching files**. Use them to embed domain knowledge into specific parts of your codebase.
 
-### Step 1: Create scoped instructions
+> **Where these files must live:** VS Code only auto-discovers `*.instructions.md` files inside the **`.github/instructions/`** folder at your workspace root (the `playground` folder — see Lab 1). The `applyTo` glob in each file decides **which files it activates for**, based on the path of the file you're editing — *not* on where the instructions file is stored. A bare `playground/.instructions.md` is **not** discovered, which is the #1 reason this exercise appears "not to work."
 
-Create `playground/.instructions.md`:
+### Step 1: Create scoped test instructions
+
+Create `playground/.github/instructions/tests.instructions.md`:
 
 ```markdown
 ---
@@ -205,11 +207,11 @@ When working with test files:
 
 ### Step 2: Create API-specific instructions
 
-Create `playground/api/.instructions.md` (create the folder if needed):
+Create `playground/.github/instructions/api.instructions.md`:
 
 ```markdown
 ---
-applyTo: "**"
+applyTo: "api/**"
 ---
 
 # API Layer Instructions
@@ -224,12 +226,13 @@ When working in the API layer:
 
 ### Step 3: Test the scoping
 
-1. In Agent mode, ask Copilot to create a test file in `playground/`
+1. In Agent mode, ask Copilot to create a test file in `playground/` — give it a name that matches the glob, e.g. `playground/calculator.test.py`
 2. Verify it follows the test instructions automatically (arrange-act-assert, naming convention)
-3. Ask Copilot to create an API endpoint in `playground/api/`
+3. Ask Copilot to create an API endpoint at a path under `api/`, e.g. `playground/api/users.py`
 4. Verify it follows the API instructions (response format, status codes, validation)
+5. Open an ordinary file that matches neither glob (e.g. `playground/hello.py`) and confirm **neither** set of rules activates
 
-The key point: **you did not have to mention these rules in your prompt**. They applied automatically based on where the file is.
+The key point: **you did not have to mention these rules in your prompt**. They applied automatically based on whether the file you were editing matched each `applyTo` glob.
 
 ---
 
@@ -337,7 +340,7 @@ This pattern comes from the [github/awesome-copilot](https://github.com/github/a
 
 ### Option A: Scoped instruction file (always-on)
 
-Create `playground/.instructions.md` or add to your existing repo-level instructions:
+Create `playground/.github/instructions/caveman.instructions.md` (or add the body to your existing repo-level `playground/.github/copilot-instructions.md`):
 
 ```markdown
 ---
