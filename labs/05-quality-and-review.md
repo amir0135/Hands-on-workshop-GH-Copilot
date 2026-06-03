@@ -80,7 +80,7 @@ If you didn't do this in Lab 3, create `playground/.github/prompts/security-revi
 
 ```markdown
 ---
-mode: "ask"
+mode: ask
 description: "Security-focused code review"
 ---
 
@@ -223,7 +223,7 @@ Create `playground/.github/prompts/test-quality-check.prompt.md`:
 
 ```markdown
 ---
-mode: "ask"
+mode: ask
 description: "Check if tests actually verify meaningful behavior"
 ---
 
@@ -254,7 +254,7 @@ Create `playground/.github/prompts/pr-review.prompt.md`:
 
 ```markdown
 ---
-mode: "ask"
+mode: ask
 description: "Review code changes like a team lead would"
 ---
 
@@ -306,7 +306,7 @@ Create `playground/.github/prompts/consistency-check.prompt.md`:
 
 ```markdown
 ---
-mode: "ask"
+mode: ask
 description: "Check for inconsistencies across the codebase"
 ---
 
@@ -333,7 +333,7 @@ Bring it all together. Create a quality checklist your team can use daily.
 
 ```markdown
 ---
-mode: "agent"
+mode: agent
 description: "Pre-commit quality check"
 ---
 

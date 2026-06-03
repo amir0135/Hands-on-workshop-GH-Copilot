@@ -35,7 +35,7 @@ Create `playground/.github/prompts/code-review.prompt.md`:
 
 ```markdown
 ---
-mode: "agent"
+mode: agent
 description: "Review code for quality, security, and team standards"
 ---
 
@@ -80,7 +80,7 @@ Create `playground/.github/prompts/refactor.prompt.md`:
 
 ```markdown
 ---
-mode: "agent"
+mode: agent
 description: "Refactor code to improve readability and maintainability"
 ---
 
@@ -104,7 +104,7 @@ Create `playground/.github/prompts/explain-code.prompt.md`:
 
 ```markdown
 ---
-mode: "ask"
+mode: ask
 description: "Explain code for new team members"
 ---
 
@@ -125,7 +125,7 @@ Create `playground/.github/prompts/write-tests.prompt.md`:
 
 ```markdown
 ---
-mode: "agent"
+mode: agent
 description: "Generate comprehensive tests for the current code"
 ---
 
@@ -237,7 +237,7 @@ Create `playground/.github/prompts/new-endpoint.prompt.md`:
 
 ```markdown
 ---
-mode: "agent"
+mode: agent
 description: "Create a new API endpoint following project patterns"
 ---
 
@@ -264,7 +264,7 @@ Create `playground/.github/prompts/fix-bug.prompt.md`:
 
 ```markdown
 ---
-mode: "agent"
+mode: agent
 description: "Diagnose and fix a bug systematically"
 ---
 
