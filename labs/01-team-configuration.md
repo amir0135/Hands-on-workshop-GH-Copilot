@@ -80,6 +80,51 @@ Create `sandbox/.github/copilot-instructions.md` with the following content. **R
 
 > **Key Takeaway:** The instructions file is your team's "coding standards for Copilot." It compounds — once set up, every developer benefits automatically.
 
+### Step 4: Prove the instructions are actually loading (the canary test)
+
+"Observing" that output looks right is unreliable — Copilot might be ignoring your file and just producing reasonable defaults. Run this 60-second test to **prove** the file is being read:
+
+**1. Add three canary rules** to the bottom of `sandbox/.github/copilot-instructions.md`:
+
+```markdown
+## Canary (temporary — delete after verifying)
+- Start every chat response with the emoji 🦄 followed by a space.
+- Use British spelling everywhere: colour, behaviour, organisation.
+- End every code comment with ` // per team rules`.
+```
+
+**2. Reload the window** (`Cmd/Ctrl+Shift+P` → `Developer: Reload Window`). Instruction files are cached per session.
+
+**3. Open Copilot Chat in Agent mode** and ask:
+```
+Write a small function that returns the colour of the sky, with a comment explaining why.
+```
+
+**4. Check all three signals:**
+
+| Signal | Pass | Fail means |
+|--------|:----:|------------|
+| Response starts with 🦄 | ✅ | Chat-level instructions not loaded |
+| Code uses `colour` not `color` | ✅ | Style instructions not applied |
+| Comment ends with `// per team rules` | ✅ | Code-gen instructions not applied |
+
+**5. Confirm in the UI.** Expand the **"Used N references"** dropdown on the response — `copilot-instructions.md` should appear in the list. If it's missing, the file was never loaded regardless of what the output looks like.
+
+**6. Delete the canary section** once you've verified all three signals.
+
+### Troubleshooting — when instructions appear to be ignored
+
+| Symptom | Likely cause | Fix |
+|---------|--------------|-----|
+| `copilot-instructions.md` not in "Used references" | Wrong workspace root | Re-open the folder that **contains** `.github/` as the workspace root (for these labs: `sandbox/`) |
+| File found but rules ignored | `github.copilot.chat.codeGeneration.useInstructionFiles` is `false` | Set it to `true` in Settings |
+| Worked yesterday, broken today | YAML frontmatter typo silently disables the file | Open the file — VS Code shows a red squiggle on invalid frontmatter |
+| Rules vague like "write good code" | Model can't act on them | Make rules **imperative and specific** (the canary rules above are a good shape) |
+| Works in Ask, ignored in Agent | Agent mode is goal-driven and may deprioritize style guidance | Keep rules short, unambiguous, and few — long instruction files get diluted |
+| Only some files get the rules | You're using `applyTo` and the glob doesn't match | See Exercise 2 — verify with the active file's workspace-relative path |
+
+> **Rule of thumb:** if you can't make the 🦄 show up, no other instruction in the file is being applied either. Always start with a canary when setting up instructions on a new repo or machine.
+
 ---
 
 ## Exercise 2: Understand Instruction Scope & Hierarchy
