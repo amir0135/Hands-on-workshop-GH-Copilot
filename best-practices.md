@@ -25,10 +25,13 @@ A one-page reference for daily use. Print it, pin it, share it.
 
 ## Choosing the Right Mode
 
+> The current VS Code chat picker shows **Agent**, **Ask**, and **Plan**. If an older note mentions **Edit** mode, treat it as **Agent** — file edits are now handled directly in Agent mode.
+
 | Task | Mode | Example |
 |------|------|---------|
-| Quick question | **Ask** | "What does this regex do?" |
-| Change specific code | **Edit** | "Add error handling to this function" |
+| Quick question, no edits | **Ask** | "What does this regex do?" |
+| Scope a change before touching files | **Plan** | "Plan how to add OAuth login across auth/, api/, and ui/" |
+| Targeted single-file edit | **Agent** | "Add error handling to this function" |
 | Build something new | **Agent** | "Create a notification service with these requirements" |
 | Multi-file refactoring | **Agent** | "Extract this logic into a service layer" |
 

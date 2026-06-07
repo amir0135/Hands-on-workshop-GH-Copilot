@@ -12,6 +12,9 @@ venv/
 Thumbs.db
 
 # Editor
-.vscode/
+# Ignore personal VS Code settings but keep the workshop's shared settings.json
+# (it registers .github/prompts, instructions, and chatmodes folders).
+.vscode/*
+!.vscode/settings.json
 .idea/
 *.swp

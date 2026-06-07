@@ -1,0 +1,20 @@
+{
+  // Workshop convention: instructions, prompts, and custom modes live under .github/.
+  // We register both the repo-root paths (for participants who open the repo root)
+  // and the sandbox/.github paths (for participants who open sandbox/ as the workspace).
+  "chat.promptFilesLocations": {
+    ".github/prompts": true,
+    "sandbox/.github/prompts": true
+  },
+  "chat.instructionsFilesLocations": {
+    ".github/instructions": true,
+    "sandbox/.github/instructions": true
+  },
+  "chat.modeFilesLocations": {
+    ".github/agents": true,
+    "sandbox/.github/agents": true,
+    ".github/chatmodes": true,
+    "sandbox/.github/chatmodes": true
+  }
+}
+
