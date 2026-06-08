@@ -15,9 +15,11 @@ A one-page reference for daily use. Print it, pin it, share it.
 | File | Purpose | Scope |
 |------|---------|-------|
 | `.github/copilot-instructions.md` | Team coding standards | Entire repo, always on |
+| `AGENTS.md` (repo root) | Cross-tool agent guidance ([agents.md](https://agents.md)) | Entire repo, always on — used by Copilot CLI and other agents |
 | `.instructions.md` (with `applyTo`) | Module-specific rules | Matching files, always on |
 | `.github/prompts/*.prompt.md` | Reusable workflows | On demand via `/` |
-| `.github/chatmodes/*.chatmode.md` | A specialist role (persona + tools) | A mode you switch into |
+| `.github/agents/*.agent.md` | A specialist role (persona + tools) — current convention | A mode you switch into |
+| `.github/chatmodes/*.chatmode.md` | Same as above — legacy path, still supported | A mode you switch into |
 
 **Start with:** `copilot-instructions.md` covering naming, error handling, testing, security.
 

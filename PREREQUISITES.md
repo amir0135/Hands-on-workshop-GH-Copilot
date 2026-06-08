@@ -16,7 +16,7 @@ code --version
 ```
 
 > **Minimum required version: 1.99** (when chat modes were introduced).
-> **Recommended: the latest stable release** (1.105 or newer at the time of writing). The chat UI evolves quickly — this workshop is written against the current VS Code mode picker which shows **Agent**, **Ask**, and **Plan**.
+> **Recommended: the latest stable release.** As of mid-2026, that's 1.105 or newer — but check [code.visualstudio.com](https://code.visualstudio.com/) for the current build, since the chat UI evolves quickly. This workshop is written against the current VS Code mode picker which shows **Agent**, **Ask**, and **Plan**.
 >
 > If your corporate Software Center only offers an older build (for example 1.117 or earlier), please update **before** the workshop:
 > - **macOS / personal install:** `Code → Check for Updates…` (or download the latest from the link above)

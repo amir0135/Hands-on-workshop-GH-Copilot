@@ -158,6 +158,8 @@ The agent honours the **same `.github/copilot-instructions.md`** you built in [L
 
 This is the payoff of centralising standards: editor, CLI, and CI all read the same source of truth. Your `.instructions.md` (`applyTo`) and `AGENTS.md` conventions apply here too.
 
+> **What's `AGENTS.md`?** It's an emerging cross-tool convention ([agents.md](https://agents.md)) for a single file at the repo root that documents *how AI agents should work in this codebase* — build commands, conventions, gotchas. The Copilot CLI reads it automatically, and several other agents (Claude Code, Cursor, Codex) do too. If your repo already has one, the CLI honours it; if not, treat your existing `.github/copilot-instructions.md` as the equivalent. You don't need both, but `AGENTS.md` is the more portable choice if you use multiple agents.
+
 > **💬 Discussion:** if your instructions only ever get tested in the editor, do they actually hold up headless? Run them through the CLI to find the gaps.
 
 ---
